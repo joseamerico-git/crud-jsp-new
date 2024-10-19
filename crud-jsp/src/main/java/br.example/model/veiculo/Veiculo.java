@@ -18,7 +18,7 @@ public class Veiculo {
 	private Integer anoModelo;
 	private Integer anoFabricacao;
 	private String tipoPintura;
-	private Tipo tipo; // Utilizar tabela Renvam
+	private Integer tipo; // Utilizar tabela Renvam
 	private Integer especie;
 	private String condicaoVin; // Utiliza Renvan:
 	private Integer condicao;
@@ -147,21 +147,54 @@ public class Veiculo {
 		this.tipoPintura = tipoPintura;
 	}
 
-	public Tipo getTipo() {
-		return tipo;
-	}
 
 	public Integer getEspecie() {
 		return especie;
+	}
+
+	public Integer getTipo() {
+		return tipo;
+	}
+
+	@Override
+	public String toString() {
+		return "Veiculo{" +
+				"tipoOperacao=" + tipoOperacao +
+				", chassi='" + chassi + '\'' +
+				", codigoCor='" + codigoCor + '\'' +
+				", descricaoCor='" + descricaoCor + '\'' +
+				", potenciaMotor=" + potenciaMotor +
+				", cilindradas=" + cilindradas +
+				", pesoLiquido=" + pesoLiquido +
+				", pesoBruto=" + pesoBruto +
+				", numeroSerie='" + numeroSerie + '\'' +
+				", tipoCombustivel=" + tipoCombustivel +
+				", numeroMotor='" + numeroMotor + '\'' +
+				", capacidadeTracao=" + capacidadeTracao +
+				", distanciaEixos='" + distanciaEixos + '\'' +
+				", anoModelo=" + anoModelo +
+				", anoFabricacao=" + anoFabricacao +
+				", tipoPintura='" + tipoPintura + '\'' +
+				", tipo=" + tipo +
+				", especie=" + especie +
+				", condicaoVin='" + condicaoVin + '\'' +
+				", condicao=" + condicao +
+				", codigoModelo='" + codigoModelo + '\'' +
+				", codigoCorDenatran=" + codigoCorDenatran +
+				", lotacaoMaxima=" + lotacaoMaxima +
+				", restricao=" + restricao +
+				'}';
+	}
+
+	public void setTipo(Integer tipo) {
+		this.tipo = tipo;
 	}
 
 	public void setEspecie(Integer especie) {
 		this.especie = especie;
 	}
 
-	public void setTipo(Tipo tipo) {
-		this.tipo = tipo;
-	}
+
 
 	public String getCondicaoVin() {
 		return condicaoVin;

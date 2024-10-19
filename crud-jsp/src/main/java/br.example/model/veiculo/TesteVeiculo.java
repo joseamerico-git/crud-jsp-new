@@ -20,7 +20,7 @@ public class TesteVeiculo {
 		veiculo.setAnoModelo(2004);
 		veiculo.setAnoFabricacao(2004);
 		veiculo.setTipoPintura("METÁLICA");
-		veiculo.setTipo(Tipo.AUTOMÓVEL);
+		veiculo.setTipo(Integer.valueOf(Tipo.AUTOMÓVEL.getDescricao()));
 		veiculo.setEspecie(Integer.valueOf(Especie.CARGA.getDescricao()));
 		veiculo.setCondicaoVin(CondicaoVin.N.name());
 		veiculo.setCondicao(Integer.valueOf(Condicao.Acabado.getDescricao()));

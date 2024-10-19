@@ -1,8 +1,12 @@
 package br.example.model;
 
 import br.example.model.certificado.Certificado;
+import br.example.model.veiculo.CodigoCorDenatran;
+import br.example.model.veiculo.Tipo;
 import br.example.model.veiculo.TipoOperacao;
 import br.example.model.veiculo.Veiculo;
+import br.example.model.veiculo.TipoCombustivel;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,13 +90,33 @@ public class Teste {
 		
 		Veiculo veiculo = new Veiculo();
 		veiculo.setTipoOperacao(Integer.valueOf(TipoOperacao.VENDA_CONCECIONARIA.getDescricao()));
-		
+		veiculo.setChassi("9B345678912345678");
+		veiculo.setCodigoCor(CodigoCorDenatran.BRANCA.getDescricao());
+		veiculo.setDescricaoCor(CodigoCorDenatran.BRANCA.name());
+		veiculo.setPotenciaMotor(60);
+		veiculo.setCilindradas(1000);
+		veiculo.setPesoLiquido(600);
+		veiculo.setPesoBruto(700);
+		veiculo.setNumeroSerie("123456");
+
+		veiculo.setTipoCombustivel(Integer.valueOf(TipoCombustivel.ALCOOL.getDescricao()));
+		veiculo.setNumeroMotor("UD12345");
+		veiculo.setCapacidadeTracao(200.1111);
+		veiculo.setDistanciaEixos("1,5  metros");
+		veiculo.setAnoFabricacao(2004);
+		veiculo.setAnoModelo(2004);
+		veiculo.setTipoPintura(CodigoCorDenatran.BRANCA.name());
+		veiculo.setTipo(Integer.valueOf(Tipo.AUTOMÓVEL.getDescricao()));
+
+
 		System.out.println("TipoOperação: "+veiculo.getTipoOperacao());
 		
 		for(TipoOperacao t:  TipoOperacao.values()) {
 			System.out.println(t.getDescricao() + " - " + t.name());
 			
 		}
+
+		System.out.println("Veiculo: "+veiculo.toString());
 		
 		
 		

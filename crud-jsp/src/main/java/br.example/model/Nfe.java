@@ -9,6 +9,11 @@ public class Nfe {
 	public boolean consumidorFinal;
 	public String natureza;
 	public Emitente emitente;
+
+	public List<Iten> getItens() {
+		return itens;
+	}
+
 	public Destinatario destinatario;
 	public List<Iten> itens;
 	public ArrayList<Pagamento> pagamentos;
@@ -42,6 +47,21 @@ public class Nfe {
 		return natureza;
 	}
 
+	@Override
+	public String toString() {
+		return "Nfe{" +
+				"idIntegracao='" + idIntegracao + '\'' +
+				", presencial='" + presencial + '\'' +
+				", consumidorFinal=" + consumidorFinal +
+				", natureza='" + natureza + '\'' +
+				", emitente=" + emitente +
+				", destinatario=" + destinatario +
+				", itens=" + itens +
+				", pagamentos=" + pagamentos +
+				", responsavelTecnico=" + responsavelTecnico +
+				'}';
+	}
+
 	public void setNatureza(String natureza) {
 		this.natureza = natureza;
 	}
@@ -66,14 +86,6 @@ public class Nfe {
 
 	public void setItens(List<Iten> itens) {
 		this.itens = itens;
-	}
-
-	@Override
-	public String toString() {
-		return "Nfe [idIntegracao=" + idIntegracao + ", presencial=" + presencial + ", consumidorFinal="
-				+ consumidorFinal + ", natureza=" + natureza + ", emitente=" + emitente + ", destinatario="
-				+ destinatario + ", itens=" + itens + ", pagamentos=" + pagamentos + ", responsavelTecnico="
-				+ responsavelTecnico + "]";
 	}
 
 	public ArrayList<Pagamento> getPagamentos() {
