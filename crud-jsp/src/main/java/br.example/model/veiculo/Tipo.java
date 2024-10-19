@@ -19,7 +19,7 @@ public enum Tipo {
 	ESP_ÔNIBUS("22"),
 	MISTO_CAM("23"),
 	CARGA_CAM("24"),
-	UTILITÁRIO("25"),
+	UTILITÁRIO("25"),  //adicionando novo atributo
 	MOTOR_CASA("26");
 	
 	private String descricao;
