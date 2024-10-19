@@ -1,11 +1,13 @@
 package br.example.model;
 
+import br.example.model.certificado.Certificado;
+import br.example.model.veiculo.TipoOperacao;
+import br.example.model.veiculo.Veiculo;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.doichejunior.model.certificados.Certificado;
-import br.com.doichejunior.model.veiculo.TipoOperacao;
-import br.com.doichejunior.model.veiculo.Veiculo;
+
 
 public class Teste {
 
