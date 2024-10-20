@@ -110,7 +110,7 @@ public class UsuarioDao {
 
     }
 
-    public Usuario getClienteId(int codigo) {
+    public Usuario getUsuarioId(int codigo) {
         Usuario usuario = new Usuario();
         PreparedStatement stmt;
         try {

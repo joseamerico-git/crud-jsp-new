@@ -3,6 +3,7 @@ package servlet;
 
 
 import action.AdicionaUsuario;
+import action.EditaUsuario;
 import action.ListaUsuarios;
 import action.RemoveUsuario;
 
@@ -40,9 +41,8 @@ public class ControladoraService extends HttpServlet {
             new RemoveUsuario().removeUsuarioById(req, resp);
         }
         else if(acao.equals("EditaUsuario")){
-          //  new EditaUsuario().executa(req,resp);
-            System.out.print(" editar");
-        }
+            new EditaUsuario().executa(req,resp);
+                    }
 
 
 
