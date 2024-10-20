@@ -1,23 +1,29 @@
 
 
-
 body{
-
-  font-family: "Nunito", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
+  color:white;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  background-color:blue;
+  background-color:#4F4F4F;
 
 }
 
-.div{
-    width:100%;
+.div_img{
+
+   width:200px;
+   height:200px;
+
+    border:solid 1px red;
 }
-img {
-   width: 100px;
-   height:100px;
+.div_img > img {
+   width:100%;
 }
+
+a{
+    color:yellow;
+}
+
 
 
 
