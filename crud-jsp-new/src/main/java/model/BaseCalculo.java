@@ -5,7 +5,7 @@ package model;
 /* ObjectMapper om = new ObjectMapper();
 Root root = om.readValue(myJsonString, Root.class); */
 public class BaseCalculo {
-	public int modalidadeDeterminacao;
-	public int valor;
-	public int quantidade;
+	private int modalidadeDeterminacao;
+	private int valor;
+	private int quantidade;
 }

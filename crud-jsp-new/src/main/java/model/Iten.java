@@ -1,14 +1,16 @@
 package model;
 
+import model.veiculo.Veiculo;
+
 public class Iten {
-	public String codigo;
-	public String descricao;
-	public String ncm;
-	public String cest;
-	public String cfop;
-	public ValorUnitario valorUnitario;
-	public double valor;
-	public Tributos tributos;
+	private String codigo;
+	private String descricao;
+	private String ncm;
+	private String cest;
+	private String cfop;
+	private ValorUnitario valorUnitario;
+	private double valor;
+	private Tributos tributos;
 
 	public String getCodigo() {
 		return codigo;
@@ -73,5 +75,17 @@ public class Iten {
 	public void setTributos(Tributos tributos) {
 		this.tributos = tributos;
 	}
+
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+
+	private Veiculo veiculo;
+
+
 
 }

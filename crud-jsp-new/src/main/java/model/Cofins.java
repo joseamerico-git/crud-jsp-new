@@ -1,8 +1,8 @@
 package model;
 
 public class Cofins {
-	public String cst;
-	public BaseCalculo baseCalculo;
-	public int aliquota;
-	public int valor;
+	private String cst;
+	private BaseCalculo baseCalculo;
+	private int aliquota;
+	private int valor;
 }

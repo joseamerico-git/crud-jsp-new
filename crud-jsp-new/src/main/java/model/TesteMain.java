@@ -41,5 +41,10 @@ public class TesteMain {
 				+ "        \"nome\": \"Tecnospeed\",\r\n" + "        \"email\": \"contato@tecnospeed.com.br\",\r\n"
 				+ "        \"telefone\": {\r\n" + "            \"ddd\": \"44\",\r\n"
 				+ "            \"numero\": \"30379500\"\r\n" + "        }\r\n" + "    }\r\n" + "}");
+
+
+		System.out.println(json);
 	}
+
+
 }

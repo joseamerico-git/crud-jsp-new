@@ -15,5 +15,7 @@ public class Principal {
         System.out.println("Bairro: " + endereco.getBairro());
         System.out.println("Localidade: " + endereco.getLocalidade());
         System.out.println("DDD: " + endereco.getDdd());
+
+
     }
 }

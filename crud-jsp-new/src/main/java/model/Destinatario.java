@@ -1,10 +1,10 @@
 package model;
 
 public class Destinatario {
-	public String cpfCnpj;
-	public String razaoSocial;
-	public String email;
-	public Endereco endereco;
+	private String cpfCnpj;
+	private String razaoSocial;
+	private String email;
+	private Endereco endereco;
 
 	public String getCpfCnpj() {
 		return cpfCnpj;

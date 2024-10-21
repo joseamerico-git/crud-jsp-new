@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Nfe {
+public class Nfe implements Serializable {
 	public String idIntegracao;
 	public String presencial;
 	public boolean consumidorFinal;

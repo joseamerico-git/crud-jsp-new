@@ -2,9 +2,12 @@ package model;
 
 
 
+import api.util.ConvertFromJson;
+import com.google.gson.Gson;
 import model.certificado.Certificado;
 import model.veiculo.*;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +34,30 @@ public class Teste {
          
         //Nfe 
         //endpoint POST sandobox: https://api.sandbox.plugnotas.com.br/nfe ou produção: https://api.plugnotas.com.br/nfe
-      
+
+		//Veiculos:
+
+		Veiculo veiculo = new Veiculo();
+		veiculo.setTipoOperacao(Integer.valueOf(TipoOperacao.VENDA_CONCECIONARIA.getDescricao()));
+		veiculo.setChassi("9B345678912345678");
+		veiculo.setCodigoCor(CodigoCorDenatran.BRANCA.getDescricao());
+		veiculo.setDescricaoCor(CodigoCorDenatran.BRANCA.name());
+		veiculo.setPotenciaMotor(60);
+		veiculo.setCilindradas(1000);
+		veiculo.setPesoLiquido(600);
+		veiculo.setPesoBruto(700);
+		veiculo.setNumeroSerie("123456");
+
+		veiculo.setTipoCombustivel(Integer.valueOf(TipoCombustivel.ALCOOL.getDescricao()));
+		veiculo.setNumeroMotor("UD12345");
+		veiculo.setCapacidadeTracao(200.1111);
+		veiculo.setDistanciaEixos("1,5  metros");
+		veiculo.setAnoFabricacao(2004);
+		veiculo.setAnoModelo(2004);
+		veiculo.setTipoPintura(CodigoCorDenatran.BRANCA.name());
+		veiculo.setTipo(Integer.valueOf(Tipo.AUTOMÓVEL.getDescricao()));
+
+
 		// Lista de notas
 		List<Iten> itens = new ArrayList<Iten>();
 		Iten item = new Iten();
@@ -40,6 +66,7 @@ public class Teste {
 		item.setNcm("06029090");
 		item.setCest("0123456");
 		item.setCfop("5101");
+		item.setVeiculo(veiculo);
 		item.setValorUnitario(new ValorUnitario(4.6, 4.6));
 
 		itens.add(item);
@@ -83,27 +110,6 @@ public class Teste {
 
 		
 		
-		//Veiculos: 
-		
-		Veiculo veiculo = new Veiculo();
-		veiculo.setTipoOperacao(Integer.valueOf(TipoOperacao.VENDA_CONCECIONARIA.getDescricao()));
-		veiculo.setChassi("9B345678912345678");
-		veiculo.setCodigoCor(CodigoCorDenatran.BRANCA.getDescricao());
-		veiculo.setDescricaoCor(CodigoCorDenatran.BRANCA.name());
-		veiculo.setPotenciaMotor(60);
-		veiculo.setCilindradas(1000);
-		veiculo.setPesoLiquido(600);
-		veiculo.setPesoBruto(700);
-		veiculo.setNumeroSerie("123456");
-
-		veiculo.setTipoCombustivel(Integer.valueOf(TipoCombustivel.ALCOOL.getDescricao()));
-		veiculo.setNumeroMotor("UD12345");
-		veiculo.setCapacidadeTracao(200.1111);
-		veiculo.setDistanciaEixos("1,5  metros");
-		veiculo.setAnoFabricacao(2004);
-		veiculo.setAnoModelo(2004);
-		veiculo.setTipoPintura(CodigoCorDenatran.BRANCA.name());
-		veiculo.setTipo(Integer.valueOf(Tipo.AUTOMÓVEL.getDescricao()));
 
 
 		System.out.println("TipoOperação: "+veiculo.getTipoOperacao());
@@ -114,8 +120,33 @@ public class Teste {
 		}
 
 		System.out.println("Veiculo: "+veiculo.toString());
+
+
+		System.out.println(" *********************");
+
+		System.out.println(" objeto para json");
+
+		Gson gson = new Gson();
+
+		String json = gson.toJson(nfE);
+		try {
+
+			FileWriter fileWriter = new FileWriter("nfE.json");
+			fileWriter.write(json);
+			fileWriter.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(json);
+		System.out.println(" *********************");
+
 		
-		
+	}
+
+
+
 		
 		
 		/*
@@ -133,5 +164,5 @@ public class Teste {
 		 * 
 		 * }
 		 */
-	}
+
 }
