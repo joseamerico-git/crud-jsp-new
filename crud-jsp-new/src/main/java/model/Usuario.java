@@ -7,6 +7,17 @@ public class Usuario {
     private Integer id;
     private String login;
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", role1=" + role1 +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }

@@ -42,7 +42,7 @@
                <td>${u.getRole()}</td>
                <td>
                <a href="controladora?acao=RemoveUsuario&id=${u.getId()}">Remover</a>
-               <a href="controladora?acao=EditaUsuario&id=${u.getId()}">Editar</a>
+               <a href="controladora?acao=EditaUsuario&id=${u.getId()}&login=${u.getLogin()}&role=${u.getRole()}">Editar</a>
 
 
                </td>

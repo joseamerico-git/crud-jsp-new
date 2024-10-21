@@ -39,9 +39,10 @@ public class UsuarioDao {
         try {
             PreparedStatement stmt;
             stmt = connection.prepareStatement("UPDATE USUARIO SET LOGIN=?,PASSWORD=?,ROLE=? WHERE ID =?");
-            stmt.setString(3, u.getLogin());
-            stmt.setString(1, u.getPassword());
-            stmt.setString(2, u.getRole());
+            stmt.setString(1, u.getLogin());
+            stmt.setString(2, u.getPassword());
+            stmt.setString(3, u.getRole());
+            stmt.setInt(4,u.getId());
 
             stmt.execute();
             stmt.close();

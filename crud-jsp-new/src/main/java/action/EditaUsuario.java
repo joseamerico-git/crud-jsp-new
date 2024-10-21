@@ -23,21 +23,14 @@ public class EditaUsuario extends HttpServlet {
        // String password = req.getParameter("password");
        int id = Integer.valueOf(idStr);
         UsuarioDao usuarioDao = new UsuarioDao();
-        //Usuario usuario = usuarioDao.getUsuarioId(id);
         Usuario usuario = new Usuario();
-        usuario = new UsuarioDao().getUsuarioId(id);
-       // usuario.setId(Integer.valueOf(req.getParameter("id")));
-        //usuario.setLogin(req.getParameter("login"));
-      //  usuario.setPassword(req.getParameter("password"));
-     //   usuario.setRole(req.getParameter(("role")));
-       // req.setAttribute("usuario", usuario);
-       // Usuario usuarioAlterar = new Usuario(login,role,password);
+        usuario.setId(Integer.valueOf(req.getParameter("id")));
+       usuario.setLogin(req.getParameter("login"));
+        usuario.setPassword(req.getParameter("password"));
+        usuario.setRole(req.getParameter("role"));
 
-       // UsuarioDao dao = new UsuarioDao();
-        //dao.alterar(usuarioAlterar);
-        
-        PrintWriter out = resp.getWriter();
-        out.println("<b>Alterado com sucesso</b>");
+        System.out.println("Usuario dados novos "+ usuario.toString());
+             new UsuarioDao().alterar(usuario);
 
        // List<Usuario> usuarios= dao.getUsuariosNome(login);
         req.setAttribute("id",usuario.getId());
