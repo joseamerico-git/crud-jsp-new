@@ -2,7 +2,7 @@ package model;
 
 
 
-import api.util.ConvertFromJson;
+import api.util.UtilNfeJson;
 import com.google.gson.Gson;
 import model.certificado.Certificado;
 import model.veiculo.*;
@@ -142,7 +142,9 @@ public class Teste {
 		System.out.println(json);
 		System.out.println(" *********************");
 
-		ConvertFromJson.converteObjetoFromJson();
+		System.out.println(" ********* nota do json convertido ************");
+		Nfe nfeConvertida = UtilNfeJson.converteObjetoFromJson(nfE,"nfE.json");
+
 	}
 
 
