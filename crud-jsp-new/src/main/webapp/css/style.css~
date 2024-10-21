@@ -1,16 +1,16 @@
 
-
+{margin:0;padding:0;}
 body{
-  color:white;
+  color:black;
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
-
+  background-color:#4F4F4F;
 
 }
 
 .container{
-  background-color:#4F4F4F;
+
 }
 
 
@@ -19,7 +19,7 @@ body{
    width:100px;
    height:100px;
 
-   
+
 }
 .div_img > img {
    width:100%;
