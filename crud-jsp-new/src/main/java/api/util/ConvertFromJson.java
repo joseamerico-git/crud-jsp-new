@@ -10,25 +10,13 @@ import java.io.IOException;
 public class ConvertFromJson {
     public static void main(String[] args) {
 
-        Gson gson = new Gson();
 
-        try {
-
-            BufferedReader bufferedReader = new BufferedReader(
-                    new FileReader("/home/geekzone/product.json"));
-
-            //converte o json para objeto java
-            Product product = gson.fromJson(bufferedReader, Product.class);
-
-            System.out.println(product);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 
     public static void converteObjetoFromJson(Object object, String path){
+
+        Gson gson = new Gson();
         try {
 
             BufferedReader bufferedReader = new BufferedReader(

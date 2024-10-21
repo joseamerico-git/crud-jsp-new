@@ -142,7 +142,7 @@ public class Teste {
 		System.out.println(json);
 		System.out.println(" *********************");
 
-		
+		ConvertFromJson.converteObjetoFromJson();
 	}
 
 
