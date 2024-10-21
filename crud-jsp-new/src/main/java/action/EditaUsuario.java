@@ -27,7 +27,16 @@ public class EditaUsuario extends HttpServlet {
         usuario.setId(Integer.valueOf(req.getParameter("id")));
        usuario.setLogin(req.getParameter("login"));
         usuario.setPassword(req.getParameter("password"));
+        String role = req.getParameter("role");
         usuario.setRole(req.getParameter("role"));
+        String descRole = "";
+        if(role=="1"){
+            descRole = "ADMIN";
+        }
+        else if(role=="2"){
+            descRole ="USER";
+        }
+
 
         System.out.println("Usuario dados novos "+ usuario.toString());
              new UsuarioDao().alterar(usuario);
@@ -37,6 +46,7 @@ public class EditaUsuario extends HttpServlet {
         req.setAttribute("login",usuario.getLogin());
         req.setAttribute("role",usuario.getRole());
         req.setAttribute("password",usuario.getPassword());
+        req.setAttribute("descRole", descRole);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/editar-usuario.jsp");
         dispatcher.forward(req,resp);

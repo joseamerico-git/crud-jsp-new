@@ -41,8 +41,8 @@
     <input type="hidden" name="acao" value="EditaUsuario">
     <div>
         <select name="role" value="<%out.print(request.getAttribute("role"));%>">
-            <option value="1">ADMIN</option>
-            <option value="2">USER</option>
+            <option value="<%out.print(request.getAttribute("role"));%>">"<%out.print(request.getAttribute("descRole"));%>"</option>
+
         </select>
 
     </div>

@@ -19,11 +19,11 @@ public class ControladoraService extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String acao = req.getParameter("acao");
-        System.out.print("A ação executada foi: "+ acao);
-        String method = req.getMethod();
-        System.out.print("O Método foi : "+ method);
-        String form = req.getRemoteUser();
-        System.out.print("Usuário remoto : "+ form);
+      //  System.out.print("A ação executada foi: "+ acao);
+     //   String method = req.getMethod();
+        //System.out.print("O Método foi : "+ method);
+       // String form = req.getRemoteUser();
+      //  System.out.print("Usuário remoto : "+ form);
         if(acao.equals("ListaUsuarios")){
             new ListaUsuarios().executa(req,resp);
         }
