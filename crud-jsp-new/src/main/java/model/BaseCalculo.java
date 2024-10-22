@@ -22,7 +22,7 @@ public class BaseCalculo {
 		this.quantidade = quantidade;
 	}
 
-	public BaseCalculo(Integer quantidade) {
-		this.quantidade = quantidade;
+	public BaseCalculo(Double valor) {
+		this.valor = valor;
 	}
 }
