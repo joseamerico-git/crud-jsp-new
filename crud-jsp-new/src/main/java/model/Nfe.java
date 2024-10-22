@@ -8,6 +8,22 @@ public class Nfe implements Serializable {
 	public String idIntegracao;
 	public String presencial;
 	public boolean consumidorFinal;
+
+	@Override
+	public String toString() {
+		return "Nfe{" +
+				"idIntegracao='" + idIntegracao + '\'' +
+				", presencial='" + presencial + '\'' +
+				", consumidorFinal=" + consumidorFinal +
+				", natureza='" + natureza + '\'' +
+				", emitente=" + emitente +
+				", destinatario=" + destinatario +
+				", itens=" + itens +
+				", pagamentos=" + pagamentos +
+				", responsavelTecnico=" + responsavelTecnico +
+				'}';
+	}
+
 	public String natureza;
 	public Emitente emitente;
 	public List<Iten> getItens() {

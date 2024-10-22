@@ -15,6 +15,8 @@ public class Icms {
 		this.valor = valor;
 	}
 
+
+
 	public String getOrigem() {
 		return origem;
 	}

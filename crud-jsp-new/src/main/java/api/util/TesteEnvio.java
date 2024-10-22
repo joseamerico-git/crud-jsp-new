@@ -67,8 +67,16 @@ public class TesteEnvio {
 		item.setCest("0123456");
 		item.setValorUnitario(new ValorUnitario(4.6, 4.6));
 		item.setValor(4.6);
-		item.setTributos(new Tributos(new Icms("0","00",new BaseCalculo(0,0),0,0),
-				new Pis("99", new BaseCalculo(0,0), 0,0), new Cofins("07",new BaseCalculo(0),0,0)));
+
+
+
+
+		item.setTributos(new Tributos(new Icms("0",
+								"00",new BaseCalculo(0,0),
+								0,
+								0
+						),
+				new Pis("99", new BaseCalculo(0,0,0), 0,0), new Cofins("07",new BaseCalculo(0),0,0)));
 		item.setCfop("5101");
 
 
