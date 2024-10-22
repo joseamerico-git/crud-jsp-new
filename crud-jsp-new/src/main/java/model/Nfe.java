@@ -10,15 +10,9 @@ public class Nfe implements Serializable {
 	public boolean consumidorFinal;
 	public String natureza;
 	public Emitente emitente;
-
 	public List<Iten> getItens() {
 		return itens;
 	}
-
-	public Destinatario destinatario;
-	public List<Iten> itens;
-	public ArrayList<Pagamento> pagamentos;
-	public ResponsavelTecnico responsavelTecnico;
 
 	public String getIdIntegracao() {
 		return idIntegracao;
@@ -48,21 +42,6 @@ public class Nfe implements Serializable {
 		return natureza;
 	}
 
-	@Override
-	public String toString() {
-		return "Nfe{" +
-				"idIntegracao='" + idIntegracao + '\'' +
-				", presencial='" + presencial + '\'' +
-				", consumidorFinal=" + consumidorFinal +
-				", natureza='" + natureza + '\'' +
-				", emitente=" + emitente +
-				", destinatario=" + destinatario +
-				", itens=" + itens +
-				", pagamentos=" + pagamentos +
-				", responsavelTecnico=" + responsavelTecnico +
-				'}';
-	}
-
 	public void setNatureza(String natureza) {
 		this.natureza = natureza;
 	}
@@ -83,17 +62,15 @@ public class Nfe implements Serializable {
 		this.destinatario = destinatario;
 	}
 
-	
-
 	public void setItens(List<Iten> itens) {
 		this.itens = itens;
 	}
 
-	public ArrayList<Pagamento> getPagamentos() {
+	public List<Pagamento> getPagamentos() {
 		return pagamentos;
 	}
 
-	public void setPagamentos(ArrayList<Pagamento> pagamentos) {
+	public void setPagamentos(List<Pagamento> pagamentos) {
 		this.pagamentos = pagamentos;
 	}
 
@@ -104,5 +81,12 @@ public class Nfe implements Serializable {
 	public void setResponsavelTecnico(ResponsavelTecnico responsavelTecnico) {
 		this.responsavelTecnico = responsavelTecnico;
 	}
+
+	public Destinatario destinatario;
+	public List<Iten> itens;
+	public List<Pagamento> pagamentos;
+	public ResponsavelTecnico responsavelTecnico;
+
+
 
 }
