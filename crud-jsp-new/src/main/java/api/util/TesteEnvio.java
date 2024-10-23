@@ -177,7 +177,7 @@ public class TesteEnvio {
        // listNfe.add(nfE);
 
         //chama a função para converter o array de nfe e salva o json
-      String jsonteste =  UtilNfeJson.converteArrayNfeEmJson(listNfe,"teste1.json");
+      String jsonteste =  UtilNfeJson.converteArrayNfeEmJson(listNfe,"meujson.json");
       HttpUtil.postNfe(jsonteste);
 
 
