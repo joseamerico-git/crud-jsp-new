@@ -20,7 +20,7 @@ public class HttpUtil {
     public static void main(String[] args) {
 
         System.out.println("Iniciando a requisição....");
-        postNfe();
+        //postNfe();
 
     }
 
@@ -29,7 +29,9 @@ public class HttpUtil {
 
     }
 
-    public static void postNfe(){
+
+
+    public static void postNfe(String jsonInputString){
 
         try {
             URL url = new URL(URL_ENVIO_NFE);
@@ -50,6 +52,8 @@ public class HttpUtil {
 
 
 
+
+            /*
 
             String jsonInputString = "[{\n" +
                     "    \"idIntegracao\": \"XXXYY9999912342\",\n" +
@@ -153,6 +157,9 @@ public class HttpUtil {
                     "        }\n" +
                     "    }\n" +
                     "}]";
+
+             */
+
             try(OutputStream os = con.getOutputStream()) {
                 byte[] input = jsonInputString.getBytes("utf-8");
                 os.write(input, 0, input.length);
