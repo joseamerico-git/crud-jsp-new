@@ -115,7 +115,7 @@ public class TesteEnvio {
 
         // Bean da nota
         Nfe nfE = new Nfe();
-        nfE.setIdIntegracao("XXXYY99999");
+        nfE.setIdIntegracao("XXXYY99999889");
         nfE.setPresencial("1");
         nfE.setConsumidorFinal(true);
         nfE.setNatureza("OPERAÇÃO INTERNA");
@@ -124,67 +124,67 @@ public class TesteEnvio {
         nfE.setItens(itens);
         nfE.setPagamentos(pagamentos);
         nfE.setResponsavelTecnico(new ResponsavelTecnico("08187168000160", "Tecnospeed", "contato@tecnospeed.com.br", new Telefone("44", "30379500")));
-        System.out.println(nfE.toString());
+       // System.out.println(nfE.toString());
 
         //DELETE nfe sandbox: https://api.sandbox.plugnotas.com.br/nfse/servico/{idServico} ou produção:https://api.plugnotas.com.br/nfse/servico/{idServico}
 
 
-        System.out.println("TipoOperação: " + veiculo.getTipoOperacao());
+        //System.out.println("TipoOperação: " + veiculo.getTipoOperacao());
 
-        for (TipoOperacao t : TipoOperacao.values()) {
-            System.out.println(t.getDescricao() + " - " + t.name());
+     //   for (TipoOperacao t : TipoOperacao.values()) {
+      //      System.out.println(t.getDescricao() + " - " + t.name());
 
-        }
+       // }
 
-        System.out.println("Veiculo: " + veiculo.toString());
-
-
-        System.out.println(" *********************");
-
-        System.out.println(" objeto para json");
-
-        Gson gson = new Gson();
-
-        String json = gson.toJson(nfE);
-        try {
-
-            FileWriter fileWriter = new FileWriter("nfE.json");
-            fileWriter.write(json);
-            fileWriter.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(json);
-        System.out.println(" *********************");
+        //System.out.println("Veiculo: " + veiculo.toString());
 
 
-        System.out.println(" ********* Converte o json em arquivo ************");
-        Nfe nfeConvertida = UtilNfeJson.converteObjetoFromJson(nfE, "nfE.json");
+       // System.out.println(" *********************");
+
+       // System.out.println(" objeto para json");
+
+       // Gson gson = new Gson();
+
+      //  String json = gson.toJson(nfE);
+       // try {
+
+        //    FileWriter fileWriter = new FileWriter("nfE.json");
+        //    fileWriter.write(json);
+       //     fileWriter.close();
+
+     //   } catch (Exception e) {
+       //     e.printStackTrace();
+       // }
+
+      //  System.out.println(json);
+      //  System.out.println(" *********************");
 
 
-        String jsonInputString = gson.toJson(nfE);
+     //   System.out.println(" ********* Converte o json em objeto e arquivo ************");
+      //  Nfe nfeConvertida = UtilNfeJson.converteObjetoFromJson(nfE, "nfE.json");
 
-        HttpUtil.postNfe("[ " + jsonInputString + "]");
+
+     //   String jsonInputString = gson.toJson(nfE);
+
+       // HttpUtil.postNfe("[ " + jsonInputString + "]");
 
 
         System.out.println("***************");
 
         ArrayList<Nfe> listNfe = new ArrayList<Nfe>();
         listNfe.add(nfE);
-        listNfe.add(nfE);
-        listNfe.add(nfE);
+        //listNfe.add(nfE);
+       // listNfe.add(nfE);
 
         //chama a função para converter o array de nfe e salva o json
-      String jsonteste =  UtilNfeJson.converteArrayNfeEmJson(listNfe,"teste.json");
-
+      String jsonteste =  UtilNfeJson.converteArrayNfeEmJson(listNfe,"teste1.json");
+      HttpUtil.postNfe(jsonteste);
 
 
         // converte objetos Java para JSON e retorna JSON como String
 
 
-        System.out.println(json);
+        System.out.println(jsonteste);
 
 
 
