@@ -115,7 +115,7 @@ public class TesteEnvio {
 
         // Bean da nota
         Nfe nfE = new Nfe();
-        nfE.setIdIntegracao("XXXYY99999889");
+        nfE.setIdIntegracao("XXXYY999998877");
         nfE.setPresencial("1");
         nfE.setConsumidorFinal(true);
         nfE.setNatureza("OPERAÇÃO INTERNA");
@@ -181,11 +181,12 @@ public class TesteEnvio {
       HttpUtil.postNfe(jsonteste);
 
 
-        // converte objetos Java para JSON e retorna JSON como String
 
+        //System.out.println(jsonteste);
 
-        System.out.println(jsonteste);
-
+        // Pega um json e convete em objeto java.
+        // Nfe nfeFromjson = UtilNfeJson.converteObjetoFromJson(nfE,"nfE.json");
+        // System.out.println(nfeFromjson.toString());
 
 
     }

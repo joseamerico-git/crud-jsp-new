@@ -47,7 +47,12 @@ public class UtilNfeJson {
 
 
 
+    /**
+     * Convete um array de objetos Nfe em arquivo .json
+     * @param  listNfe -> ArrayList de Nfe
+     * @param path O caminho ou nome do arquivoex: ("arquivo.json")
 
+     */
     public static String converteArrayNfeEmJson(ArrayList<Nfe> listNfe, String nameFile) {
         Gson gson = new Gson();
         String jsonteste = new Gson().toJson(listNfe);
@@ -57,6 +62,11 @@ public class UtilNfeJson {
         return jsonteste;
     }
 
+    /**
+     * Salva um arquivo passando caminho + nome
+     * @param path caminho ou nome do arquivo
+     * @param jsonInput String com o conteúdo do meu .json
+     */
     public  static void salvarArquivo(String path, String jsonInput){
         try {
             //Escreve Json convertido em arquivo chamado "file.json"
@@ -70,6 +80,13 @@ public class UtilNfeJson {
 
     }
 
+    /**
+     * Convete um arquivo de objeto Json para um objeto java
+     * @param nfe A nota fiscal eletrônica
+     * @param path O caminho ou nome do arquivoex: ("arquivo.json")
+     * @return Objeto Nfe Nota fiscal eletrônica
+
+     */
     public static Nfe converteObjetoFromJson(Nfe nfe, String path) {
 
         Gson gson = new Gson();
@@ -77,11 +94,8 @@ public class UtilNfeJson {
 
             BufferedReader bufferedReader = new BufferedReader(
                     new FileReader(path));
-
             //converte o json para objeto java
             nfe = gson.fromJson(bufferedReader, Nfe.class);
-
-          //  System.out.println(nfe.toString());
 
         } catch (IOException e) {
             e.printStackTrace();
