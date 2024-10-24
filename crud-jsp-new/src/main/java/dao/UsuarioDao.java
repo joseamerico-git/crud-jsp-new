@@ -52,7 +52,7 @@ public class UsuarioDao {
 		List<Usuario> usuarios = new ArrayList<>();
 		PreparedStatement stmt;
 		try {
-			stmt = connection.prepareStatement("SELECT *FROM USUARIO");
+			stmt = connection.prepareStatement("SELECT *FROM USUARIO order by login");
 
 			ResultSet rs = stmt.executeQuery();
 

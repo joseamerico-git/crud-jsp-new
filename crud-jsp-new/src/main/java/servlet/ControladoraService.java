@@ -8,10 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import action.AdicionaUsuario;
-import action.EditaUsuario;
-import action.ListaUsuarios;
-import action.RemoveUsuario;
+import action.*;
 
 @WebServlet("/controladora")
 public class ControladoraService extends HttpServlet {
@@ -37,6 +34,10 @@ public class ControladoraService extends HttpServlet {
 		} else if (acao.equals("EditaUsuario")) {
 			new EditaUsuario().executa(req, resp);
 		}
+		else if (acao.equals("RelatorioUsuario")) {
+			new RelatorioUsuario().executa(req, resp);
+		}
+
 
 	}
 }
