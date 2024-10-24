@@ -14,7 +14,7 @@ public class ConnectionFactory {
 	public static Connection getConnection() {
 		try {
 
-			cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jsp", "root", "root");
+			cnn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jsp", "root", "usbw");
 			stm = cnn.createStatement();
 			// System.out.println("conectado");
 
