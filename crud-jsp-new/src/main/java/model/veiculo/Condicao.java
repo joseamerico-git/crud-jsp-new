@@ -1,10 +1,8 @@
 package model.veiculo;
 
 public enum Condicao {
-	Acabado("1"),
-	Inacabado("2"),
-	Semiacabado("3");
-	
+	Acabado("1"), Inacabado("2"), Semiacabado("3");
+
 	private String descricao;
 
 	private Condicao(String descricao) {
@@ -18,7 +16,5 @@ public enum Condicao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
-	
+
 }

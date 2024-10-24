@@ -147,7 +147,6 @@ public class Veiculo {
 		this.tipoPintura = tipoPintura;
 	}
 
-
 	public Integer getEspecie() {
 		return especie;
 	}
@@ -158,32 +157,15 @@ public class Veiculo {
 
 	@Override
 	public String toString() {
-		return "Veiculo{" +
-				"tipoOperacao=" + tipoOperacao +
-				", chassi='" + chassi + '\'' +
-				", codigoCor='" + codigoCor + '\'' +
-				", descricaoCor='" + descricaoCor + '\'' +
-				", potenciaMotor=" + potenciaMotor +
-				", cilindradas=" + cilindradas +
-				", pesoLiquido=" + pesoLiquido +
-				", pesoBruto=" + pesoBruto +
-				", numeroSerie='" + numeroSerie + '\'' +
-				", tipoCombustivel=" + tipoCombustivel +
-				", numeroMotor='" + numeroMotor + '\'' +
-				", capacidadeTracao=" + capacidadeTracao +
-				", distanciaEixos='" + distanciaEixos + '\'' +
-				", anoModelo=" + anoModelo +
-				", anoFabricacao=" + anoFabricacao +
-				", tipoPintura='" + tipoPintura + '\'' +
-				", tipo=" + tipo +
-				", especie=" + especie +
-				", condicaoVin='" + condicaoVin + '\'' +
-				", condicao=" + condicao +
-				", codigoModelo='" + codigoModelo + '\'' +
-				", codigoCorDenatran=" + codigoCorDenatran +
-				", lotacaoMaxima=" + lotacaoMaxima +
-				", restricao=" + restricao +
-				'}';
+		return "Veiculo{" + "tipoOperacao=" + tipoOperacao + ", chassi='" + chassi + '\'' + ", codigoCor='" + codigoCor
+				+ '\'' + ", descricaoCor='" + descricaoCor + '\'' + ", potenciaMotor=" + potenciaMotor
+				+ ", cilindradas=" + cilindradas + ", pesoLiquido=" + pesoLiquido + ", pesoBruto=" + pesoBruto
+				+ ", numeroSerie='" + numeroSerie + '\'' + ", tipoCombustivel=" + tipoCombustivel + ", numeroMotor='"
+				+ numeroMotor + '\'' + ", capacidadeTracao=" + capacidadeTracao + ", distanciaEixos='" + distanciaEixos
+				+ '\'' + ", anoModelo=" + anoModelo + ", anoFabricacao=" + anoFabricacao + ", tipoPintura='"
+				+ tipoPintura + '\'' + ", tipo=" + tipo + ", especie=" + especie + ", condicaoVin='" + condicaoVin
+				+ '\'' + ", condicao=" + condicao + ", codigoModelo='" + codigoModelo + '\'' + ", codigoCorDenatran="
+				+ codigoCorDenatran + ", lotacaoMaxima=" + lotacaoMaxima + ", restricao=" + restricao + '}';
 	}
 
 	public void setTipo(Integer tipo) {
@@ -193,8 +175,6 @@ public class Veiculo {
 	public void setEspecie(Integer especie) {
 		this.especie = especie;
 	}
-
-
 
 	public String getCondicaoVin() {
 		return condicaoVin;
@@ -220,7 +200,6 @@ public class Veiculo {
 		this.codigoModelo = codigoModelo;
 	}
 
-	
 	public Integer getCodigoCorDenatran() {
 		return codigoCorDenatran;
 	}

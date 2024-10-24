@@ -5,12 +5,12 @@ public class Pagamento {
 	public String meio;
 	public double valor;
 
-
 	public Pagamento(boolean aVista, String meio, double valor) {
 		this.aVista = aVista;
 		this.meio = meio;
 		this.valor = valor;
 	}
+
 	public boolean isaVista() {
 		return aVista;
 	}

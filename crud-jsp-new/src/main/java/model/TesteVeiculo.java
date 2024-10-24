@@ -1,12 +1,22 @@
-package model.veiculo;
+package model;
+
+import model.veiculo.CodigoCorDenatran;
+import model.veiculo.Condicao;
+import model.veiculo.CondicaoVin;
+import model.veiculo.Especie;
+import model.veiculo.Restricao;
+import model.veiculo.Tipo;
+import model.veiculo.TipoCombustivel;
+import model.veiculo.TipoOperacao;
+import model.veiculo.Veiculo;
 
 public class TesteVeiculo {
-	
+
 	public static void main(String[] args) {
 		Veiculo veiculo = new Veiculo();
 		veiculo.setTipoOperacao(Integer.valueOf(TipoOperacao.VENDA_CONCECIONARIA.getDescricao()));
 		veiculo.setChassi("11111111111111111");
-		veiculo.setCodigoCor("02618"); ///QUEM VAI PREENCHER A COR??
+		veiculo.setCodigoCor("02618"); /// QUEM VAI PREENCHER A COR??
 		veiculo.setDescricaoCor("BRANCO MAHLER LISA");
 		veiculo.setPotenciaMotor(60);
 		veiculo.setCilindradas(1000);
@@ -24,14 +34,13 @@ public class TesteVeiculo {
 		veiculo.setEspecie(Integer.valueOf(Especie.CARGA.getDescricao()));
 		veiculo.setCondicaoVin(CondicaoVin.N.name());
 		veiculo.setCondicao(Integer.valueOf(Condicao.Acabado.getDescricao()));
-		veiculo.setCodigoModelo("123"); //Utilizar a tabela renavam
+		veiculo.setCodigoModelo("123"); // Utilizar a tabela renavam
 		veiculo.setCodigoCorDenatran(Integer.valueOf(CodigoCorDenatran.BRANCA.getDescricao()));
 		veiculo.setLotacaoMaxima(5);
 		veiculo.setRestricao(Integer.valueOf(Restricao.Não_há.getDescricao()));
-		
+
 		System.out.println(veiculo.getRestricao());
-		
-		
+
 	}
 
 }

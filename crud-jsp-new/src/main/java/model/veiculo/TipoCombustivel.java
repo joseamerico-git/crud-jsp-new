@@ -1,17 +1,12 @@
 package model.veiculo;
 
 public enum TipoCombustivel {
-	   
-	   ALCOOL("01"),
-	   GASOLINA("02"),
-	   DIESEL("03"),
-	   ALCOOL_GASOLINA("16"),
-	   GASOLINA_ALCOOL_GNV("17");
-	
-	
+
+	ALCOOL("01"), GASOLINA("02"), DIESEL("03"), ALCOOL_GASOLINA("16"), GASOLINA_ALCOOL_GNV("17");
+
 	private String descricao;
 	private Integer tipoCombustivel;
-	
+
 	public Integer getTipoCombustivel() {
 		return tipoCombustivel;
 	}
@@ -30,10 +25,10 @@ public enum TipoCombustivel {
 
 	TipoCombustivel(String descricao) {
 		// TODO Auto-generated constructor stub
-		this.tipoCombustivel= Integer.valueOf(descricao);
+		this.tipoCombustivel = Integer.valueOf(descricao);
 		this.descricao = descricao;
 	}
-	   
+
 	public static void main(String[] args) {
 		System.out.println(TipoCombustivel.ALCOOL.getDescricao());
 	}

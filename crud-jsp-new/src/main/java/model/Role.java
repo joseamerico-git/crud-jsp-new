@@ -1,19 +1,18 @@
 package model;
 
 public enum Role {
-    ADMIN("ROLE_ADMIN"),
-    USER("ROLE_USER");
-    private String descricao;
 
-    Role(String descricao) {
+	ADMIN("ROLE_ADMIN"), USER("ROLE_USER");
 
-        this.descricao = descricao;
-    }
+	private String descricao;
 
-    public String getDescricao() {
-        return descricao;
-    }
+	Role(String descricao) {
 
+		this.descricao = descricao;
+	}
 
+	public String getDescricao() {
+		return descricao;
+	}
 
 }

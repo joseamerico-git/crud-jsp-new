@@ -1,31 +1,21 @@
 package model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Nfe implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	public String idIntegracao;
 	public String presencial;
 	public boolean consumidorFinal;
-
-	@Override
-	public String toString() {
-		return "Nfe{" +
-				"idIntegracao='" + idIntegracao + '\'' +
-				", presencial='" + presencial + '\'' +
-				", consumidorFinal=" + consumidorFinal +
-				", natureza='" + natureza + '\'' +
-				", emitente=" + emitente +
-				", destinatario=" + destinatario +
-				", itens=" + itens +
-				", pagamentos=" + pagamentos +
-				", responsavelTecnico=" + responsavelTecnico +
-				'}';
-	}
-
+	public Destinatario destinatario;
+	public List<Iten> itens;
+	public List<Pagamento> pagamentos;
+	public ResponsavelTecnico responsavelTecnico;
 	public String natureza;
 	public Emitente emitente;
+
 	public List<Iten> getItens() {
 		return itens;
 	}
@@ -98,11 +88,12 @@ public class Nfe implements Serializable {
 		this.responsavelTecnico = responsavelTecnico;
 	}
 
-	public Destinatario destinatario;
-	public List<Iten> itens;
-	public List<Pagamento> pagamentos;
-	public ResponsavelTecnico responsavelTecnico;
-
-
+	@Override
+	public String toString() {
+		return "Nfe{" + "idIntegracao='" + idIntegracao + '\'' + ", presencial='" + presencial + '\''
+				+ ", consumidorFinal=" + consumidorFinal + ", natureza='" + natureza + '\'' + ", emitente=" + emitente
+				+ ", destinatario=" + destinatario + ", itens=" + itens + ", pagamentos=" + pagamentos
+				+ ", responsavelTecnico=" + responsavelTecnico + '}';
+	}
 
 }

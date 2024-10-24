@@ -1,10 +1,10 @@
 package model.veiculo;
 
 public enum CondicaoVin {
-	R("Remarcado"),
-	N("Normal");
+	R("Remarcado"), N("Normal");
+
 	private String descricao;
-	
+
 	private CondicaoVin(String descricao) {
 		this.descricao = descricao;
 	}

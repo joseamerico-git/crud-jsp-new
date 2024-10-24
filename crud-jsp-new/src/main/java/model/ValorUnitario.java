@@ -5,7 +5,7 @@ public class ValorUnitario {
 	public double tributavel;
 
 	public ValorUnitario(double comercial, double tributavel) {
-		// TODO Auto-generated constructor stub
+
 		this.comercial = comercial;
 		this.tributavel = tributavel;
 	}
