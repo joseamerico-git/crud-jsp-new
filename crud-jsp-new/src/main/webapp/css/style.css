@@ -3,13 +3,20 @@
    padding: 0;
 }
 
+h1{
+   font-weight: bold;
+}
 
 
 body {
-   font-family: arial, helvetica, sans-serif;
-   font-size: 12px;
-}
+   color: black;
+   font-family: "Nanum Gothic", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   background-color: #4F4F4F;
+   font-size: 15px;
 
+}
 .menu {
    list-style: none;
    border: 1px solid #c0c0c0;
@@ -61,14 +68,7 @@ body {
     
       }
 
-body {
-   color: black;
-   font-family: "Nanum Gothic", sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   background-color: #4F4F4F;
 
-}
 
 
 
@@ -126,16 +126,7 @@ a {
    padding: 20px 10px;
   
 }
-.fcc-btn {
-   background-color:#7d876682;
-   color: white;
-   padding: 15px 25px;
-   text-decoration: none;
-   border-radius: 8px;
-   border:solid 1px;
-   align-items: center;
 
-}
 
 
 .card {
@@ -208,12 +199,24 @@ a {
    -webkit-filter: drop-shadow(15px 10px 5px rgba(209, 200, 200, 0.5));
    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
 }
+
 */
-.fcc-btn{
+
+.fcc-btn {
+   background-color:#7d876682;
+   color: white;
+   padding: 15px 25px;
+   text-decoration: none;
+   border-radius: 8px;
+   border:solid 1px;
+   align-items: center;
    transition: all .5s;
-   border: 10px solid transparent;
+   border: 1px solid transparent;
+   border-radius: 5px;
+
 }
+
 .fcc-btn:hover{
-   border: 1px solid #136497;
-   border-radius: 5%;
+   border: 1px solid #babdbe;
+   border-radius: 5px;
 }
