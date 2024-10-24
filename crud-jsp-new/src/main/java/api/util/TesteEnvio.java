@@ -103,7 +103,7 @@ public class TesteEnvio {
 
 		// Bean da nota
 		Nfe nfE = new Nfe();
-		nfE.setIdIntegracao("XXXYY999998877");
+		nfE.setIdIntegracao("XXXYY999998817");
 		nfE.setPresencial("1");
 		nfE.setConsumidorFinal(true);
 		nfE.setNatureza("OPERAÇÃO INTERNA");
