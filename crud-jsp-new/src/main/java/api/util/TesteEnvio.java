@@ -97,6 +97,7 @@ public class TesteEnvio {
 		destinatario.setEmail("contato@tecnospeed.com.br");
 		destinatario.setEndereco(endereco);
 
+		
 		// GET emitente
 		Emitente emitente = new Emitente();
 		emitente.setCpfCnpj("08187168000160");
