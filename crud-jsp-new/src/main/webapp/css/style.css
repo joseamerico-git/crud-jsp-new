@@ -184,6 +184,8 @@ a {
     height: 940px;
 }
 
+/*
+
 .fcc-btn{
    transition: all 0.5s;
    cursor: pointer;
@@ -192,4 +194,26 @@ a {
 .fcc-btn:hover{
    -webkit-transform: scale(1.5);
    transform: scale(0.25);
+}
+
+
+
+
+.fcc-btn{
+   transition: all 0.5s;
+   cursor: pointer;
+}
+
+.fcc-btn:hover{
+   -webkit-filter: drop-shadow(15px 10px 5px rgba(209, 200, 200, 0.5));
+   filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+*/
+.fcc-btn{
+   transition: all .5s;
+   border: 10px solid transparent;
+}
+.fcc-btn:hover{
+   border: 1px solid #136497;
+   border-radius: 5%;
 }
