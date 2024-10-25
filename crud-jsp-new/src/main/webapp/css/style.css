@@ -5,18 +5,6 @@
 }
 
 
-.container{
-   font-family: "Nanum Gothic", sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   background-color: #4F4F4F;
-   display: flex;
-   flex-direction: column;
-   border: solid 1px red;
-   
-}
-
-
 
 body {
   
@@ -24,11 +12,32 @@ body {
    font-weight: 400;
    font-style: normal;
    background-color: #4F4F4F;
-   display: flex;
-   flex-direction: column;
+   
+
+  
+
  
 
 }
+.form-add-cliente{
+   background-color:  #4F4F4F;
+   width: 100%;
+   height: 100vh;
+   color: white;
+}
+
+.container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   font-family: "Nanum Gothic", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   
+
+ 
+} 
+
 
 .menu {
    display: flex;
@@ -44,20 +53,35 @@ body {
 nav{
    width: 100%;
    height: 3rem;
-   background-color: rgb(38, 38, 41);
+   background-color: rgb(94, 94, 107);
    display: flex;
    justify-content: center;
-  
-   align-items: center;
+     align-items: center;
    padding-bottom: 1px;
-   border: solid 1px yellow;
+   border-radius: 5px;
+  
+}
+
+
+.div-menu {
+  
+   object-fit: cover;
+   border: solid 1px rgb(231, 224, 224);
+
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   
+   border-radius: 5px;
+
+
 }
 
 .menu li {
    position: relative;
    float: left;
    border-right: 1px solid #c0c0c0;
-   border: solid 1px greenyellow;
+   
 }
 
 
@@ -98,39 +122,6 @@ nav{
    width: 150px;
 
 }
-h1 {
-   font-weight: bold;
-   color: white;
-}
-
-
-.div_img {
-   padding-top: 50px;
-   width: 200px;
-   height: 200px;
-
-
-}
-
-.div_img>img {
-   width: 100%;
-}
-
-
-
-.div-menu {
-
-   object-fit: cover;
-   border: solid 1px rgb(231, 224, 224);
-   padding: 20px 15px 20px;
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   margin: 5px;
-   border-radius: 5px;
-
-
-}
 
 .div-menu>.op {
    display: flex;
@@ -150,6 +141,29 @@ h1 {
    padding: 20px 10px;
 
 }
+h1 {
+   font-weight: bold;
+   color: white;
+}
+
+
+.div_img {
+   padding-top: 50px;
+   width: 200px;
+   height: 200px;
+
+
+}
+
+.div_img>img {
+   width: 100%;
+   height: 100%;
+}
+
+
+
+
+
 
 .div-card{
    padding-top: 50px;
@@ -193,6 +207,22 @@ h1 {
    margin-bottom: 20px;
 }
 
+
+
+
+footer {
+   position: absolute;
+   bottom: 0;
+   background-color: rgb(94, 94, 107);
+   color: #FFF;
+   width: 100%;
+   height: 100px;    
+   text-align: center;
+   line-height: 100px;
+}
+
+/* Fim do html*/
+
 .card button {
    border: none;
    border-radius: 5px;
@@ -207,12 +237,7 @@ h1 {
    height: 940px;
 }
 
-.container{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   padding:5px;
-} 
+
 
 .fcc-btn {
    background-color: #7d876682;
@@ -233,20 +258,11 @@ h1 {
    border-radius: 5px;
 }
 
-.footer{
-   width: calc(100% - 0.5rem);
-   height: 3rem;
-   background-color: rgb(38, 38, 41);
-   
-   justify-content: center;
-   padding: 0 15px;
-   align-items: center;
-   padding-bottom: 1px;
-   margin-bottom: 0;
- 
-}
 
-/*
+
+/* Estilo de button
+
+
 
 .fcc-btn{
    transition: all 0.5s;
