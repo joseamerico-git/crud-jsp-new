@@ -168,6 +168,8 @@ h1 {
 .div-card{
    padding-top: 50px;
    margin:auto;
+   justify-content: center;
+   display: flex;
 }
 
 .card {
