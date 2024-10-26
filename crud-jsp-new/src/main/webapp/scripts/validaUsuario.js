@@ -1,4 +1,4 @@
-function loadSpinner() {
+ function loadSpinner() {
     let cont = 0;
     let newElement = setInterval(() => {
         let element = document.createElement("p");
@@ -36,6 +36,8 @@ function valida() {
     let password = document.forms["meu-form"]["password"].value;
     let password1 = document.forms["meu-form"]["password1"].value;
     let spinner = document.getElementById("spinner");
+    let btn_salvar =  document.forms["meu-form"]["btn_salvar"]
+    let btn =  document.forms["meu-form"]["btn"]
 
 
     if (login === "") {
@@ -72,17 +74,32 @@ function valida() {
 
 
     else if (password === password1) {
-        loadSpinner();
+      
         document.getElementById("img-confirm").src = "./imagens/chck.png";
         form.login.style.cssText = "border:solid 1px green;";
         form.password.style.cssText = "border:solid 1px green;";
         form.password1.style.cssText = "border:solid 1px green;";
         spinner.innerHTML +=  htmlSpinner(); 
-        form.action = 'controladora?action=AdicionaUsuario';
-        document.getElementById("meu-form").submit();
+        //setTimeout(submeterForm, 2000); // Executes the submit function after 2 seconds
+        action ="";
+        btn_salvar.addEventListener("click", (e) => {
+            form.action = `controladora?action=EditaUsuario`;
+        })
 
+        btn.addEventListener("click", (e) => {
+            form.action = 'controladora?action=AdicionaUsuario';
+        })
+
+
+        
+        form.submit();
+       
         return true;
     }
 
 
+}
+
+function submeterForm(){
+     
 }
