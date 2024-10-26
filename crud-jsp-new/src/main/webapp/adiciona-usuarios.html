@@ -40,24 +40,21 @@
 
                 <form action="controladora" method="POST" name="meu-form">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label></br>
-                        <input name="login" type="email" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp" placeholder="Seu email">
+                        <label for="login">Email</label></br>
+                        <input name="login" type="email" class="form-control" id="login" aria-describedby="emailHelp"
+                            placeholder="Seu email">
                         <br>
                         <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com
                             ninguém.</small>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Senha</label>
-                        <input name="password" type="password" class="form-control" id="exampleInputPassword1"
-                            placeholder="Senha">
+                        <label for="password">Senha</label>
+                        <input name="password" type="password" class="form-control" id="password" placeholder="Senha">
                     </div>
-
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Confirmar Senha</label>
-                        <input name="password-confirm" type="password" class="form-control" id="exampleInputPassword1"
-                            placeholder="Senha">
+                        <label for="password1">Senha</label>
+                        <input name="password1" type="password" class="form-control" id="password1" placeholder="Senha">
                     </div>
 
 
@@ -70,8 +67,8 @@
                         </select>
                         <br>
                         <br>
-                        <button type="button" class="btn btn-primary" onclick="valida()">Enviar</button>
-                        <img name="img-confirm" id="img-confirm" >
+                        <button name="btn" type="submit" class="btn btn-primary" onclick="return valida()">Enviar</button>
+                        <img name="img-confirm" id="img-confirm">
                     </div>
 
 
@@ -98,60 +95,10 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <script>
-        function valida() {
+    <script src="./scripts/valida.js">
+      
 
 
-            let form = document.forms["meu-form"];
-            let login = document.forms["meu-form"]["login"].value;
-            let password = document.forms["meu-form"]["password"].value;
-            let passwordConfirm = document.forms["meu-form"]["password-confirm"].value;
-            
-
-
-            if (login == "") {
-                alert("Preencha o campo email!");
-                form.login.style.cssText = "border:solid 1px red;";
-                form.login.focus()
-                return false;
-            }
-
-            if (password == "") {
-                alert("Preencha o campo password!");
-                form.password.style.cssText = "border:solid 1px red;";
-                form.password.focus()
-                return false;
-            }
-            if (passwordConfirm == "") {
-                alert("Preencha o campo password!");
-                form.passwordConfirm.style.cssText = "border:solid 1px red;";
-                form.passwordConfirm.focus()
-                return false;
-            }
-            if (password != passwordConfirm) {
-                alert("As senhas informadas não conferem!")
-                form.passwordConfirm.style.cssText = "border:solid 1px red;";
-                form.password.style.cssText = "border:solid 1px red;";
-                form.passwordConfirm.focus()
-                return false;
-
-            }
-
-            if(password === passwordConfirm){
-                document.getElementById("img-confirm").src="./imagens/chck.png";
-                return true;
-            }
-           
-
-
-            form.login.style.cssText = "border:solid 1px green;";
-            form.password.style.cssText = "border:solid 1px green;";
-            form.passwordConfirm.style.cssText = "border:solid 1px green;";
-           
-          
-            alert("oke")
-
-        }
 
 
     </script>

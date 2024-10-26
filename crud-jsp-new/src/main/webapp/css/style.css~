@@ -6,13 +6,17 @@
 
 
 
-html, body {
+body {
   
    font-family: "Nanum Gothic", sans-serif;
    font-weight: 400;
    font-style: normal;
-   background-color:#6c757d;
+   background-color: #4F4F4F;
    
+
+  
+
+ 
 
 }
 .form-add-cliente{
@@ -67,7 +71,7 @@ nav{
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
-   background-color:#56c7cfaf;
+   
    border-radius: 5px;
 
 
