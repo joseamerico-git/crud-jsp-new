@@ -5,14 +5,30 @@ public enum Role {
 	ADMIN("ROLE_ADMIN"), USER("ROLE_USER");
 
 	private String descricao;
+	private Integer id;
 
 	Role(String descricao) {
 
 		this.descricao = descricao;
 	}
+  public String getId(Role r){
+		String id ="";
+		if(Role.USER.name() == "USER"){
+			id="2";
+		}else if(Role.ADMIN.name()=="ADMIN"){
+			id ="1";
+	  }
+		return id;
+
+  }
 
 	public String getDescricao() {
 		return descricao;
+	}
+
+
+	public static void main(String[] args) {
+		System.out.print(Role.USER.name());
 	}
 
 }

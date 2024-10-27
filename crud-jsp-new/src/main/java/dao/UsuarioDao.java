@@ -160,7 +160,7 @@ public class UsuarioDao {
 		List<Usuario> clientes = new ArrayList<>();
 		PreparedStatement stmt;
 		try {
-			stmt = connection.prepareStatement("SELECT * FROM USUARIO WHERE LOGIN like ? LIMIT 5");
+			stmt = connection.prepareStatement("SELECT * FROM USUARIO WHERE LOGIN like ? LIMIT 100");
 			stmt.setString(1, "%" + nome + "%");
 			ResultSet rs = stmt.executeQuery();
 

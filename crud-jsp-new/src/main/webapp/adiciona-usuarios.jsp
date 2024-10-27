@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="pt-br">
 
 <head>
@@ -35,7 +37,7 @@
             <div class="div_img"><img src="./imagens/icon.webp"></div>
 
             <div class="op">
-                
+
                 <h1>Cadastro de Usuários</h1>
 
 
@@ -72,7 +74,7 @@
                             onclick="return valida()">Enviar</button>
                         <img name="img-confirm" id="img-confirm">
                         <div id="spinner"></div>
-                        <span> ${msg}</span>
+                        ${msg}
                     </div>
 
 

@@ -1,76 +1,127 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Usuário</title>
-   
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Crud Servlets e JSP</title>
+    <link rel="icon" href="imagens/icon.webp">
+
 
 </head>
+
 <body>
 
-    <div class="container menu" >
-        <h1>Editar Usuário</h1>
-        <form action="" >
+    <div class="container">
+
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#">O que fazemos?</a>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">SEO</a></li>
+                        <li><a href="#">Design</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="div-menu">
+            <div class="div_img"><img src="./imagens/icon.webp"></div>
+
+            <div class="op">
+                
+                <h1>Editar Usuário</h1>
+
+
+                <form action="controladora" method="GET" name="meu-form">
 	
-            <div class="form-group">
-                  <label for="exampleInputEmail1">Id</label>
-                  <input name="id" type="text" class="form-control" id="id" value="<%out.print(request.getAttribute("id"));%>" readonly>
-          
-              </div>
-          
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Endereço de email</label>
-                  <input name="login" type="email" class="form-control" id="login" aria-describedby="emailHelp"
-                        value="<%out.print(request.getAttribute("login"));%>">
-                  <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-              </div>
-          
-              <div class="form-group">
-                  <label for="exampleInputPassword1">Senha</label>
-                  <input name="password" type="password" class="form-control" id="exampleInputPassword1" value="<%out.print(request.getAttribute("password"));%>">
-              </div>
-          
-              <input type="hidden" name="acao" value="EditaUsuario">
-              
-              <div>
-                  <select name="role" value="<%out.print(request.getAttribute("role"));%>">
-                      <option value="<%out.print(request.getAttribute("role"));%>">"<%out.print(request.getAttribute("descRole"));%>"</option>
-          
-                  </select>
-          
-              </div>
-              
-              <button type="submit" class="btn btn-primary">Salvar</button>
-          </form>
-          
-          <script src="scripts/validador.js">
-          
-          </script>
-          
-          <script>
-              var select = document.querySelector('select');
-              select.addEventListener('change', function() {
-              var option = this.selectedOptions[0];
-              var texto = option.textContent;
-              console.log(texto);
-              console.log(select.value);
-          
-          });
-          
-          </script>
-          
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-                   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                     crossorigin="anonymous"></script>
-          
-          
+                    <div class="form-group">
+                          <label for="exampleInputEmail1">Id</label>
+                          <input name="id" type="text" class="form-control" id="id" value="<%out.print(request.getAttribute("id"));%>" readonly>
+                  
+                      </div>
+                  
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Endereço de email</label>
+                          <input name="login" type="email" class="form-control" id="login" aria-describedby="emailHelp"
+                                value="<%out.print(request.getAttribute("login"));%>">
+                          <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                      </div>
+                  
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">Senha</label>
+                          <input name="password" type="password" class="form-control" id="exampleInputPassword1" value="<%out.print(request.getAttribute("password"));%>">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="password1">Senha</label>
+                        <input name="password1" type="password" class="form-control" id="password1" placeholder="Senha">
+                    </div>
+                  
+                      <input type="hidden" class="form-control" name="acao" value="SalvaUsuario">
+                      
+                      <div>
+        
+                                                 <select name="role" onChange="seleciona()">
+                                                  <c:forEach var="u" items="${enums}">
+                                                      <option name="" id="${u.getId(u)}" value="${u.getDescricao()}">${u.getDescricao()}</option>
+                                                      </c:forEach>
+                                                 </select>
+        
+        
+                      </div>
+                      
+                      <br>
+                        <br>
+                        <button name="btn-salvar" type="submit" class="btn btn-primary"
+                            onclick="return valida()">Salvar</button>
+                        <img name="img-confirm" id="img-confirm">
+                        <div id="spinner"></div>
+                    </div>
+
+                  ${msg}
+                </form>
+
+
+            </div>
+
+
+        </div>
 
     </div>
 
+
+
+
+
+
+    </div>
+
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    <script src="./scripts/validaUsuario.js">
+
+
+
+
+
+
+    </script>
 </body>
+
 </html>

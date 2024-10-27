@@ -37,7 +37,7 @@
               <div class="div_img"><img src="./imagens/icon.webp"></div>
   
               <div class="op">
-                  <h1>Cadastro de Usuários</h1>
+                  <h1>Lista de Usuários</h1>
   
   
                   <form action="controladora" method="GET">
@@ -59,7 +59,7 @@
                 <tbody>
      
                     <c:forEach var="u" items="${usuarios}">
-                               <tr>
+                            <tr>
              
                             <td>${u.getLogin()}</td>
                             <td>${u.getRole()}</td>

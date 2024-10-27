@@ -27,8 +27,9 @@ public class AdicionaUsuario {
 
 		Usuario usuario = new Usuario(login, password, role);
 		new UsuarioDao().salvar(usuario);
-
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/controladora?acao=ListaUsuarios");
+		req.setAttribute("msg","Cadastrado com sucesso!");
+       // resp.getWriter().write("Cadastrado com sucesso!");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/adiciona-usuarios.jsp");
 		dispatcher.forward(req, resp);
 
 	}

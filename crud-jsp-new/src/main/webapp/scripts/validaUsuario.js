@@ -32,12 +32,14 @@ function valida() {
 
 
     let form = document.forms["meu-form"];
+     let id = document.forms["meu-form"]["id"].value;
     let login = document.forms["meu-form"]["login"].value;
     let password = document.forms["meu-form"]["password"].value;
     let password1 = document.forms["meu-form"]["password1"].value;
     let spinner = document.getElementById("spinner");
-    let btn_salvar =  document.forms["meu-form"]["btn_salvar"]
+    let btnSalvar =  document.forms["meu-form"]["btn-salvar"]
     let btn =  document.forms["meu-form"]["btn"]
+    let acao = document.forms["meu-form"]["acao"]
 
 
     if (login === "") {
@@ -82,12 +84,19 @@ function valida() {
         spinner.innerHTML +=  htmlSpinner(); 
         //setTimeout(submeterForm, 2000); // Executes the submit function after 2 seconds
         action ="";
-        btn_salvar.addEventListener("click", (e) => {
-            form.action = `controladora?action=EditaUsuario`;
+        btnSalvar.addEventListener("click", (e) => {
+            if(form.select.value!=null){
+              acao.value="SalvaUsuario";
+              form.action = `controladora?acao=${acao}&id=${id}&login=${login}&role=${role}`;
+
+            }
+
+
         })
 
         btn.addEventListener("click", (e) => {
-            form.action = 'controladora?action=AdicionaUsuario';
+            form.action = "controladora?action=AdicionaUsuario";
+
         })
 
 

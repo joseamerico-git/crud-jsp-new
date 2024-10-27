@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum ExemploEnum {
 	SALVAR(1), IMPRMIR(2), ABRIR(3), VISUALIZAR(4), FECHAR(5);
 
@@ -24,6 +27,16 @@ public enum ExemploEnum {
 	public static void main(String[] args) {
 
 		escolheOpcao(ExemploEnum.ABRIR);
+
+
 	}
+
+
+
+
+
+
+
+
 
 }

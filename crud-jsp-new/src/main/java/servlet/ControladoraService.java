@@ -32,8 +32,17 @@ public class ControladoraService extends HttpServlet {
 
 			new RemoveUsuario().removeUsuarioById(req, resp);
 		} else if (acao.equals("EditaUsuario")) {
-			new EditaUsuario().executa(req, resp);
+			new EditaUsuario().seleciona(req, resp);
 		}
+		else if (acao.equals("SalvaUsuario")){
+			System.out.print("Salvando alterações");
+			new SalvaUsuario().executa(req,resp);
+		//	String mensagem = req.getParameter("mensagem");
+		//	req.setAttribute("mensagem", mensagem);
+			//req.getRequestDispatcher("resultado.jsp").forward(req, resp);
+		}
+
+
 		else if (acao.equals("RelatorioUsuario")) {
 			new RelatorioUsuario().executa(req, resp);
 		}
