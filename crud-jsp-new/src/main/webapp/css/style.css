@@ -84,6 +84,8 @@ nav{
 }
 
 
+
+
 .menu li a {
    color: #f1ecec;
    text-decoration: none;
@@ -260,6 +262,19 @@ footer {
 }
 
 
+.form-login{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   padding: auto;
+   width:400px;
+   height:400px;
+   margin:auto;
+   border-radius: 5px;
+   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.75);
+   -webkit-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.75);
+}
 
 /* Estilo de button
 
