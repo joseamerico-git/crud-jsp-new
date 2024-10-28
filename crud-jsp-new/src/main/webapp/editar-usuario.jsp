@@ -40,7 +40,7 @@
                 <h1>Editar Usuário</h1>
 
 
-                <form action="controladora" method="GET" name="meu-form">
+                <form action="controladora" method="POST " name="meu-form">
 	
                     <div class="form-group">
                           <label for="exampleInputEmail1">Id</label>

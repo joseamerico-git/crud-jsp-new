@@ -95,7 +95,7 @@ function valida() {
         })
 
         btn.addEventListener("click", (e) => {
-            form.action = "controladora?action=AdicionaUsuario";
+            form.action = "controladora?acao=AdicionaUsuario";
 
         })
 

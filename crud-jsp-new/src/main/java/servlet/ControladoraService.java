@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.*;
+import action.auth.Authentication;
 
 @WebServlet("/controladora")
 public class ControladoraService extends HttpServlet {
@@ -18,6 +19,7 @@ public class ControladoraService extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String acao = req.getParameter("acao");
+
 
 		if (acao.equals("ListaUsuarios")) {
 			new ListaUsuarios().executa(req, resp);
@@ -32,7 +34,7 @@ public class ControladoraService extends HttpServlet {
 
 			new RemoveUsuario().removeUsuarioById(req, resp);
 		} else if (acao.equals("EditaUsuario")) {
-			new EditaUsuario().seleciona(req, resp);
+			new EditaUsuario().doPost(req, resp);
 		}
 		else if (acao.equals("SalvaUsuario")){
 			System.out.print("Salvando alterações");
@@ -45,6 +47,12 @@ public class ControladoraService extends HttpServlet {
 
 		else if (acao.equals("RelatorioUsuario")) {
 			new RelatorioUsuario().executa(req, resp);
+		}
+
+		else if(acao.equals("Authentication")){
+
+			//System.out.println("Bateu na rota authentication");
+			new Authentication().doPost(req, resp);
 		}
 
 

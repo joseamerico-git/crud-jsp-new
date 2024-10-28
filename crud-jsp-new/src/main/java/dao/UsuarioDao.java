@@ -135,8 +135,33 @@ public class UsuarioDao {
 		Usuario usuario = new Usuario();
 		PreparedStatement stmt;
 		try {
-			stmt = connection.prepareStatement("SELECT * FROM USUARIO WHERE NOME = ? ;");
+			stmt = connection.prepareStatement("SELECT * FROM USUARIO WHERE LOGIN = ? ;");
 			stmt.setString(1, nome);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+
+				usuario = new Usuario();
+				usuario.setId(rs.getInt("ID"));
+				usuario.setLogin(rs.getString("LOGIN"));
+
+				usuario.setRole(rs.getString("ROLE"));
+				usuario.setPassword(rs.getString("PASSWORD"));
+			}
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return usuario;
+	}
+
+	public Usuario getUsuarioLoginSenha(String login, String senha) {
+		Usuario usuario = new Usuario();
+		PreparedStatement stmt;
+		try {
+			stmt = connection.prepareStatement("SELECT * FROM USUARIO WHERE LOGIN = ? AND PASSWORD = ? ;");
+			stmt.setString(1, login);
+			stmt.setString(2, senha);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 

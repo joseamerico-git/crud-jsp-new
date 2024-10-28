@@ -19,7 +19,7 @@ public class EditaUsuario extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	public void seleciona(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//resp.setContentType("text/html;charset=UTF-8");
 
 		req.setAttribute("enums", Arrays.asList(Role.values()));
