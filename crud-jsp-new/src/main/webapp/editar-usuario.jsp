@@ -67,9 +67,9 @@
                   
                       <input type="hidden" class="form-control" name="acao" value="SalvaUsuario">
                       
-                      <div>
+                      <div class="form-group">
         
-                                                 <select name="role" onChange="seleciona()">
+                                                 <select class = "form-control" name="role" onChange="seleciona()">
                                                   <c:forEach var="u" items="${enums}">
                                                       <option name="" id="${u.getId(u)}" value="${u.getDescricao()}">${u.getDescricao()}</option>
                                                       </c:forEach>

@@ -22,6 +22,7 @@ public class EditaUsuario extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//resp.setContentType("text/html;charset=UTF-8");
 
+		/* carregando dados de enums */
 		req.setAttribute("enums", Arrays.asList(Role.values()));
 
 		Usuario usuario = new Usuario();
@@ -31,20 +32,12 @@ public class EditaUsuario extends HttpServlet {
 		usuario.setRole(req.getParameter("role"));
 		String role = req.getParameter("role");
 
-
-
-
 		String descRole = "";
 		if (role == "1") {
 			descRole = "ADMIN";
 		} else if (role == "2") {
 			descRole = "USER";
 		}
-
-		System.out.println("Usuario dados novos " + usuario.toString());
-
-		//new UsuarioDao().alterar(usuario);
-
 
 		req.setAttribute("id", usuario.getId());
 		req.setAttribute("login", usuario.getLogin());

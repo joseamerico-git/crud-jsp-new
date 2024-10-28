@@ -4,6 +4,7 @@ import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import dao.UsuarioDao;
 import model.Usuario;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,9 @@ public class Authentication  {
 
           Usuario usuario = new UsuarioDao().getUsuarioLoginSenha(login,password);
           System.out.println("Usuário autenticado: "+usuario.getLogin());
+          req.setAttribute("login", login);
+          RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
+          dispatcher.forward(req, resp);
 
 
 

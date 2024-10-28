@@ -269,7 +269,7 @@ footer {
    flex-wrap: wrap;
    align-items: center;
    padding: auto;
-  
+
    margin:auto;
    border-radius: 5px;
    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.75);
@@ -277,18 +277,9 @@ footer {
    -moz-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.75);
 }
 
-/* Estilo de button
 
-
-
-.fcc-btn{
-   transition: all 0.5s;
-   cursor: pointer;
-}
-
-.fcc-btn:hover{
-   -webkit-transform: scale(1.5);
-   transform: scale(0.25);
+#bem-vindo{
+color:yellow;
 }
 
 
