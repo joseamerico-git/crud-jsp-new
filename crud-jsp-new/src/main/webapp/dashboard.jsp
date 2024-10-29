@@ -5,13 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <title>Crud Servlets e JSP</title>
+    <title>Crud Servlets e JSP dashboard</title>
     <link rel="icon" href="imagens/icon.webp">
 
 
 </head>
 <body>
+
   <span id="bem-vindo">Bem vindo! <%out.print(request.getAttribute("login"));%>!</span>
+
+
+
      <div class="container">
 
         <nav>
@@ -27,6 +31,9 @@
                       </li>
 
                   <li><a href="#">Contato</a></li>
+                  <c:if test="${!request.getAttribute("login")==null}">
+                      //else
+                  </c:if>
                   <li><a href="login.html">Entrar</a></li>
 
 

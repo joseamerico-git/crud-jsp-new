@@ -61,11 +61,16 @@
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.4.5.v20170502</version>
+
+
+
 				<configuration>
 					<webApp>
+
+
 						<contextPath>/crud-jsp</contextPath>
 					</webApp>
-				</configuration>
+						</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

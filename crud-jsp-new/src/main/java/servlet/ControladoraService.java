@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.*;
 import action.auth.Authentication;
+import action.services.HidroBikeApi;
 
 @WebServlet("/controladora")
 public class ControladoraService extends HttpServlet {
@@ -53,7 +54,13 @@ public class ControladoraService extends HttpServlet {
 
 			//System.out.println("Bateu na rota authentication");
 			new Authentication().doPost(req, resp);
-		}
+		}else if(acao.equals("auth/register")){
+            try {
+                new HidroBikeApi().doPost(req,resp);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
 
 
 	}

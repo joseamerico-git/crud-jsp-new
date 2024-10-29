@@ -38,6 +38,7 @@ function valida() {
     let password1 = document.forms["meu-form"]["password1"].value;
     let spinner = document.getElementById("spinner");
     let btnSalvar =  document.forms["meu-form"]["btn-salvar"]
+    let btnRegister = document.forms["meu-form"]["btn_register"]
     let btn =  document.forms["meu-form"]["btn"]
     let acao = document.forms["meu-form"]["acao"]
 
@@ -97,6 +98,10 @@ function valida() {
         btn.addEventListener("click", (e) => {
             form.action = "controladora?acao=AdicionaUsuario";
 
+        })
+
+        btnRegister.addEventListener("click",(e) =>{
+            form.action ="controladora?acao=auth/Register"
         })
 
 
