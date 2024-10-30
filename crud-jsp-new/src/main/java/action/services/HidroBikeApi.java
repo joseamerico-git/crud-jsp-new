@@ -24,31 +24,63 @@ public class HidroBikeApi {
         System.out.print(req.getParameter("role"));
         System.out.print(req.getParameter("password"));
 
+        Usuario usuario = new Usuario();
+        usuario.setLogin(req.getParameter("login"));
+        usuario.setPassword(req.getParameter("password"));
+        usuario.setRole(req.getParameter("role"));
 
-         final String USER_AGENT = "Mozilla/5.0";
+
+        // JSON a ser enviado no corpo da requisição
+        // String jsonInputString = "{\"nome\": \"João\", \"idade\": 30}";
+        Gson gson = new Gson();
+        String jsonInputString = gson.toJson(usuario);
+        System.out.println("Meu json usuario "+jsonInputString);
+
+        //***************************************
 
         try {
-            // URL do endpoint
-            URL url = new URL("http://localhost/auth/register");
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            String url = "http://localhost:8081/auth/register";
+            URL obj = new URL(url);
+            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-            // Configurações da requisição
+            // Método POST
             con.setRequestMethod("POST");
-            con.setRequestProperty("Content-Type", "application/json");
-            con.setRequestProperty("Accept", "application/json");
+            //con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+           // con.setRequestProperty("Content-Type", "application/json");
+
+           // String urlParameters = "username=user&password=pass";
+
+            // Enviando o POST request
             con.setDoOutput(true);
+            OutputStream os = con.getOutputStream();
+            os.write(jsonInputString.getBytes());
+            os.flush();
+            os.close();
 
-            Usuario usuario = new Usuario();
-            usuario.setLogin(req.getParameter("login"));
-            usuario.setPassword(req.getParameter("password"));
-            usuario.setRole(req.getParameter("role"));
+            int responseCode = con.getResponseCode();
+            System.out.println("Response Code: " + responseCode);
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            // Imprimindo a resposta
+            System.out.println(response.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
-            // JSON a ser enviado no corpo da requisição
-           // String jsonInputString = "{\"nome\": \"João\", \"idade\": 30}";
-            Gson gson = new Gson();
-            String jsonInputString = gson.toJson(usuario);
+        //***************************************
 
+
+
+            /*
 
             // Envia o JSON no corpo da requisição
             try (OutputStream os = con.getOutputStream()) {
@@ -66,14 +98,14 @@ public class HidroBikeApi {
                 }
                 System.out.println(response.toString());
             }
+            /*
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+         */
+
+
+
     }
-
-        }
-
-
-
-////
-
+}

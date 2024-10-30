@@ -31,9 +31,7 @@
                       </li>
 
                   <li><a href="#">Contato</a></li>
-                  <c:if test="${!request.getAttribute("login")==null}">
-                      //else
-                  </c:if>
+
                   <li><a href="login.html">Entrar</a></li>
 
 
