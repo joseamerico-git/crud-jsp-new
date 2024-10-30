@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import action.*;
 import action.auth.Authentication;
 import action.services.HidroBikeApi;
+import action.services.Impressao;
 
 @WebServlet("/controladora")
 public class ControladoraService extends HttpServlet {
@@ -61,6 +62,9 @@ public class ControladoraService extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }
+		else if (acao.equals("imprimir")){
+			new Impressao().doPost(req,resp);
+		}
 
 
 	}
