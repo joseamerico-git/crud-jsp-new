@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="model.Role" %>
+<%@ page import="java.util.Arrays" %>
 
 <html lang="pt-br">
 
@@ -65,10 +67,13 @@
                     <input type="hidden" name="acao" value="auth/register">
                     <br>
                     <div>
-                        <select name="role" class="form-control">
-                            <option value="1">ADMIN</option>
-                            <option value="2">USER</option>
-                        </select>
+                       <select name="role" class="form-control">
+                             <c:forEach var="u" items="<%= Role.values() %>">
+                                 <option name="" id="${u.getId(u)}" value="${u.getDescricao()}">${u.getDescricao()}</option>
+                              </c:forEach>
+                       </select>
+
+
                         <br>
                         <br>
                         <button name="btn_register" id="btn_register" type="submit" class="btn btn-primary"

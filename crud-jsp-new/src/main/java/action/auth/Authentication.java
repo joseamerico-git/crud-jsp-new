@@ -1,6 +1,6 @@
 package action.auth;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
 import dao.UsuarioDao;
 import model.Usuario;
 

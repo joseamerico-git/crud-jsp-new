@@ -57,6 +57,7 @@ public class ControladoraService extends HttpServlet {
 			new Authentication().doPost(req, resp);
 		}else if(acao.equals("auth/register")){
             try {
+
                 new HidroBikeApi().doPost(req,resp);
             } catch (Exception e) {
                 throw new RuntimeException(e);

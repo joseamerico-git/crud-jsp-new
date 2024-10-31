@@ -5,25 +5,9 @@ import java.util.Objects;
 public class Usuario {
 
 	private Integer id;
-
-	@Override
-	public String toString() {
-		return "Usuario{" +
-				"id=" + id +
-				", login='" + login + '\'' +
-				", password='" + password + '\'' +
-				", role='" + role + '\'' +
-				'}';
-	}
-
-	public Usuario() {
-	}
-
-	public Usuario(String login, String password, String role) {
-		this.login = login;
-		this.password = password;
-		this.role = role;
-	}
+	private String login;
+	private String password;
+	private String role;
 
 	public Integer getId() {
 		return id;
@@ -57,9 +41,17 @@ public class Usuario {
 		this.role = role;
 	}
 
-	private String login;
-	private String password;
-	private String role;
+	public Usuario() {
+	}
+
+	public Usuario(String login, String password, String role) {
+		this.login = login;
+		this.password = password;
+		this.role = role;
+	}
+
+
+
 
 }
 

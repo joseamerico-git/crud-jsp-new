@@ -2,7 +2,7 @@ package model;
 
 public enum Role {
 
-	ADMIN("ROLE_ADMIN"), USER("ROLE_USER");
+	ADMIN("ROLE_ADMIN"), USER("ROLE_USER"), GERENTE("GERENTE");
 
 	private String descricao;
 	private Integer id;

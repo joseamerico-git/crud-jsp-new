@@ -4,6 +4,8 @@ import api.util.Endereco;
 import api.util.Util;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import dao.UsuarioDao;
+import model.Role;
 import model.Usuario;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -20,14 +22,21 @@ public class HidroBikeApi {
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
-        System.out.print(req.getParameter("login"));
-        System.out.print(req.getParameter("role"));
-        System.out.print(req.getParameter("password"));
+        String role = req.getParameter("role");
 
-        Usuario usuario = new Usuario();
-        usuario.setLogin(req.getParameter("login"));
-        usuario.setPassword(req.getParameter("password"));
-        usuario.setRole(req.getParameter("role"));
+
+
+        if (role.equals("ROLE_ADMIN")) {
+            role = "0";
+        } else if(role.equals("ROLE_USER")) {
+            role = "1";
+        }else{
+            role="2";
+        }
+        Usuario usuario = new Usuario(req.getParameter("login"), req.getParameter("password"), role);
+       // new UsuarioDao().salvar(usuario);
+        req.setAttribute("msg","Cadastrado com sucesso!");
+        System.out.print(role);
 
 
         // JSON a ser enviado no corpo da requisição
@@ -38,43 +47,34 @@ public class HidroBikeApi {
 
         //***************************************
 
-        try {
-            String url = "http://localhost:8081/auth/register";
-            URL obj = new URL(url);
-            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-            // Método POST
-            con.setRequestMethod("POST");
-            //con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-           // con.setRequestProperty("Content-Type", "application/json");
-
-           // String urlParameters = "username=user&password=pass";
-
-            // Enviando o POST request
-            con.setDoOutput(true);
-            OutputStream os = con.getOutputStream();
-            os.write(jsonInputString.getBytes());
-            os.flush();
-            os.close();
-
-            int responseCode = con.getResponseCode();
-            System.out.println("Response Code: " + responseCode);
-
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-
-            // Imprimindo a resposta
-            System.out.println(response.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
+        URL url = new URL("http://localhost:8081/auth/register");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json");
+        con.setRequestProperty("Accept", "application/json");
+        con.setDoOutput(true);
+/*
+         jsonInputString = "{\n" +
+                "  \"login\":\"doichejunior@teste1112\",\n" +
+                "  \"password\":\"123\",\n" +
+                "  \"role\":\"1\"\n" +
+                "  \n" +
+                "}\n";
+*/
+        try (OutputStream os = con.getOutputStream()) {
+            byte[] input = jsonInputString.getBytes("utf-8");
+            os.write(input, 0, input.length);
         }
 
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"))) {
+            StringBuilder response = new StringBuilder();
+            String responseLine;
+            while ((responseLine = br.readLine()) != null) {
+                response.append(responseLine.trim());
+            }
+            System.out.println(response.toString());
+        }
+    }
 
         //***************************************
 
@@ -107,5 +107,5 @@ public class HidroBikeApi {
 
 
 
-    }
+
 }

@@ -41,7 +41,15 @@ function valida() {
     let btnRegister = document.forms["meu-form"]["btn_register"]
     let btn =  document.forms["meu-form"]["btn"]
     let acao = document.forms["meu-form"]["acao"]
+    let role = document.forms["meu-form"]["role"]
 
+
+       if (login === "") {
+            alert("Selecione o role!");
+            form.role.style.cssText = "border:solid 1px red;";
+            form.role.focus()
+            return false;
+        }
 
     if (login === "") {
         alert("Preencha o campo email!");
