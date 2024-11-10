@@ -63,6 +63,10 @@ public class ControladoraService extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }
+		else if(acao.equals("auth/login")){
+
+			new LoginApiHidrobike().doPost(req,resp);
+		}
 		else if (acao.equals("imprimir")){
 			new Impressao().doPost(req,resp);
 		}

@@ -26,9 +26,17 @@ public class Authentication  {
 
           Usuario usuario = new UsuarioDao().getUsuarioLoginSenha(login,password);
           System.out.println("Usuário autenticado: "+usuario.getLogin());
-          req.setAttribute("login", login);
-          RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
-          dispatcher.forward(req, resp);
+          if(usuario.getLogin()!=null){
+              req.setAttribute("login", login);
+              RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
+              dispatcher.forward(req, resp);
+          }
+          else{
+              req.setAttribute("mensagem", "Usuário ou senha inválidos!");
+              RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
+              dispatcher.forward(req, resp);
+          }
+
 
 
 

@@ -11,6 +11,9 @@ public enum Role {
 
 		this.descricao = descricao;
 	}
+
+	// alterar hidrobike
+	//ADMIN("admin"), USER("user"),GERENTE("gerente");
   public String getId(Role r){
 		String id ="";
 		if(Role.USER.name() == "USER"){

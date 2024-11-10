@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<c:if test="${foo.direction ==<% com.example.Direction.ASC %>}">
+
     <div class="container">
 
         <nav>

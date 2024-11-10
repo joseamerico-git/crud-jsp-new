@@ -38,18 +38,8 @@ function valida() {
     let password1 = document.forms["meu-form"]["password1"].value;
     let spinner = document.getElementById("spinner");
     let btnSalvar =  document.forms["meu-form"]["btn-salvar"]
-    let btnRegister = document.forms["meu-form"]["btn_register"]
     let btn =  document.forms["meu-form"]["btn"]
-    let acao = document.forms["meu-form"]["acao"]
-    let role = document.forms["meu-form"]["role"]
 
-
-       if (login === "") {
-            alert("Selecione o role!");
-            form.role.style.cssText = "border:solid 1px red;";
-            form.role.focus()
-            return false;
-        }
 
     if (login === "") {
         alert("Preencha o campo email!");
@@ -95,8 +85,9 @@ function valida() {
         action ="";
         btnSalvar.addEventListener("click", (e) => {
             if(form.select.value!=null){
-              acao.value="SalvaUsuario";
-              form.action = `controladora?acao=${acao}&id=${id}&login=${login}&role=${role}`;
+
+              form.action = `controladora?acao=SalvarAlteracoesUsuario&id=${id}&login=${login}&role=${role}`;
+
 
             }
 
@@ -104,12 +95,8 @@ function valida() {
         })
 
         btn.addEventListener("click", (e) => {
-            form.action = "controladora?acao=AdicionaUsuario";
+            form.action = "controladora?action=AdicionaUsuario";
 
-        })
-
-        btnRegister.addEventListener("click",(e) =>{
-            form.action ="controladora?acao=auth/Register"
         })
 
 

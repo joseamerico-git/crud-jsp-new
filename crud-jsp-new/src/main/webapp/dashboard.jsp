@@ -32,7 +32,7 @@
 
                   <li><a href="#">Contato</a></li>
 
-                  <li><a href="login.html">Entrar</a></li>
+                  <li><a href="login.jsp">Entrar</a></li>
 
 
           </ul>

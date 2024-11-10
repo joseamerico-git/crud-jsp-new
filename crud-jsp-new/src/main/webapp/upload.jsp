@@ -38,12 +38,27 @@
             <div class="op">
                 
                 <h1>Upload de Imagens com Servlet</h1>
-                Imagem: <input type="file" value="">
-                        <img src="" width=100 height=100 border=1px>
+              <form action="upload" method="post" enctype="multipart/form-data">
+
+                Imagem: <input type="file" name="file" id="file">
+                <img src="" width=100 height=100 border=1px>
+
+                <input class="hide" type="submit" value="Enviar"/>
 
 
-                  <span>${msg}</span>
+                <input type=file>
+                <input type=button class=hide value="Adicionar outro">
 
+              </form>
+
+
+                  <span>${mensagem}</span>
+             <br/>
+             <br/>
+             <br/>
+             <br/>
+             <form action="upload" method="get">
+                <input type="submit" value="Visualizar Imagens"/>
 
 
             </div>
@@ -73,7 +88,42 @@
     <script src="./scripts/validaUsuario.js">
 
 
+  <script>
+    function verificaMostraBotao(){
+        $('input[type=file]').each(function(index){
+            if ($('input[type=file]').eq(index).val() != ""){
+                $('.hide').show();
+            }
+        });
+    }
 
+    $('input[type=file]').on("change", function(){
+      verificaMostraBotao();
+    });
+
+   $('.hide').on("click", function(){
+       $(document.body).append($('<input />', {type: "file" }).change(verificaMostraBotao));
+       $(document.body).append($('<img />'));
+       $('.hide').hide();
+   });
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+        $(input).next()
+        .attr('src', e.target.result)
+    };
+    reader.readAsDataURL(input.files[0]);
+    }
+    else {
+        var img = input.value;
+        $(input).next().attr('src',img);
+    }
+}
+
+
+  </script>
 
 
 
