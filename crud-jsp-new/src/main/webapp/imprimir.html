@@ -5,11 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-  <form method="POST" action="controladora?acao=imprimir">
+<form method="GET" action="controladora?acao=imprimir">
+    Livro:
+    <input name="livro" type="text">
+    Folha:
+    <input name="foha" type="text">
+    Data:
+    <input name="data" type="date">
+    Funcionário:
+    <input name="funcionario" type="text">
+    Função
+    <input name="funcao" type="text">
+    Motivo:
+    <input name="motivo" type="text">
+    <input name="acao" type="hidden" value="imprimir">
 
-      <input name="texto" type="text">
-      <input type="submit" value="imprimir">
+    <input type="submit"  value="Enviar">
 
-  </form>
+</form>
+
+
 </body>
 </html>
