@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="controladora?acao=imprimir">
+    Livro:
+    <input name="livro" type="text">
+    Folha:
+    <input name="folha" type="text">
+    Data:
+    <input name="data" type="date">
+    Funcionário:
+    <input name="funcionario" type="text">
+    Função
+    <input name="funcao" type="text">
+    Motivo:
+    <input name="motivo" type="text">
+    <input name="acao" type="hidden" value="imprimir">
+
+    <label>Atribuição</label>
+        <select name="funcao">
+            <option value="escrevente">Escrevente</option>
+            <option value="auxiliar">Auxiliar</option>
+            <option value="tabeliao">Tabelião</option>
+            <option value="estagiario">Estagiário</option>
+        </select>
+
+    <label>Cidade</label>
+    <select name="cidade">
+        <option value="Assis/SP">Assis</option>
+        <option value="Maracaí/SP">Maracaí</option>
+        <option value="Goioerê/PR">Goioerê</option>
+        <option value="Uberlândia/MG">Uberlândia</option>
+    </select>
+
+    <input type="submit"  value="Enviar">
+
+</form>
+
+
+</body>
+</html>
