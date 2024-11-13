@@ -33,12 +33,23 @@ public class LoginApiHidrobike {
                 con.setRequestProperty("Content-Type", "application/json");
                 con.setDoOutput(true);
 
+                Usuario usuario = new Usuario();
+                usuario.setLogin(req.getParameter("login"));
+                usuario.setPassword(req.getParameter("password"));
+                //usuario.setRole("1");
+
+
+
+                Gson gson = new Gson();
+                String json ="";
+                json = gson.toJson(usuario);
+                System.out.println(json);
                 // Corpo da solicitação
-                String jsonInputString = "{\"login\": \"doichejunior@gmail.com\", \"password\": \"1\", \"role\": 1}";
+               // String jsonInputString = "{\"login\": \"doichejunior@gmail.com\", \"password\": \"1\", \"role\": 1}";
 
                 // Enviando a solicitação
                 try (OutputStream os = con.getOutputStream()) {
-                    byte[] input = jsonInputString.getBytes("UTF-8");
+                    byte[] input = json.getBytes("UTF-8");
                     os.write(input, 0, input.length);
                 }
 
@@ -59,7 +70,10 @@ public class LoginApiHidrobike {
                     response.append(currentLine);
                 }
 
-                Gson gson = new Gson();
+
+                if(responseCode>299){
+
+
                 Token tokenObj = gson.fromJson(response.toString(), Token.class);
                 System.out.println(tokenObj.getToken());
                 in.close();
@@ -67,6 +81,12 @@ public class LoginApiHidrobike {
                 // resp.getWriter().write("Cadastrado com sucesso!");
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
                 dispatcher.forward(req, resp);
+                }else{
+                    req.setAttribute("mensagem","Login ou senha inválidos");
+                    // resp.getWriter().write("Cadastrado com sucesso!");
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/loginApiHidrobike.jsp");
+                    dispatcher.forward(req, resp);
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();

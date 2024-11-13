@@ -60,8 +60,7 @@
 
 
                     <button id="btnLoginApi" name="btnLoginApi" type="submit" class="btn btn-primary"
-                            onclick="return valida()">Login normal
-                    </button>
+                            onclick="return valida()">Login normal</button>
 
 
 

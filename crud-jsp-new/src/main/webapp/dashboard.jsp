@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Crud Servlets e JSP dashboard</title>
     <link rel="icon" href="imagens/icon.webp">
-    <input type="hidden" name="token" id="token">
+
 
 </head>
 <body>
