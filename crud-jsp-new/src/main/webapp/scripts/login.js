@@ -6,7 +6,7 @@ function valida() {
     let login = document.forms["from-login"]["login"].value;
     let password = document.forms["from-login"]["password"].value;
     let acao = document.forms["from-login"]["acao"].value;
-    let mensagem = .forms["from-login"]["mensagem"];
+    let mensagem = document.forms["from-login"]["mensagem"];
     let btnLogin =  document.forms["meu-form"]["btnLogin"]
     let btnLoginApi =  document.forms["meu-form"]["btnLoginApi"]
 

@@ -56,7 +56,7 @@
                     <label for="password">Password:</label>
                     <input name="password" id="password" type="password" class="form-control">
                     <input type="hidden" name="acao" value="auth/login">
-                     <input type="hidden" name="token" value="<%out.print(request.getAttribute('token'));%>">
+
 
 
                     <button id="btnLoginApi" name="btnLoginApi" type="submit" class="btn btn-primary"

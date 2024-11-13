@@ -58,21 +58,15 @@ public class LoginApiHidrobike {
                 while ((currentLine = in.readLine()) != null) {
                     response.append(currentLine);
                 }
-                System.out.println(response.toString());
+
                 Gson gson = new Gson();
                 Token tokenObj = gson.fromJson(response.toString(), Token.class);
                 System.out.println(tokenObj.getToken());
                 in.close();
-                if(token!=""){
-
-
                 req.setAttribute("token",tokenObj.getToken());
                 // resp.getWriter().write("Cadastrado com sucesso!");
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/loginApiHidrobike.jsp");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
                 dispatcher.forward(req, resp);
-                }else{
-                    
-                }
 
             } catch (Exception e) {
                 e.printStackTrace();
