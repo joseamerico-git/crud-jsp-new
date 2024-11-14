@@ -42,7 +42,7 @@
                 <h1>Cadastro de Usuários</h1>
 
 
-                <form action="controladora" method="POST" name="meu-form">
+                <form action="controladora" method="get" name="meu-form">
                     <div class="form-group">
                         <label for="login">Email</label></br>
                         <input name="login" type="email" class="form-control" id="login" aria-describedby="emailHelp"
@@ -62,7 +62,7 @@
                     </div>
 
 
-                    <input type="hidden" name="acao" value="AdicionaUsuario">
+                    <input type="hidden" name="acao" value="auth/register">
                     <br>
                     <div>
                         <select name="role" class="form-control">

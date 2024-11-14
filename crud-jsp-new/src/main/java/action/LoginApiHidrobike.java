@@ -36,7 +36,7 @@ public class LoginApiHidrobike {
                 Usuario usuario = new Usuario();
                 usuario.setLogin(req.getParameter("login"));
                 usuario.setPassword(req.getParameter("password"));
-                //usuario.setRole("1");
+                usuario.setRole("1");
 
 
 
@@ -71,22 +71,36 @@ public class LoginApiHidrobike {
                 }
 
 
-                if(responseCode>299){
-
-
+                in.close();
                 Token tokenObj = gson.fromJson(response.toString(), Token.class);
                 System.out.println(tokenObj.getToken());
-                in.close();
                 req.setAttribute("token",tokenObj.getToken());
-                // resp.getWriter().write("Cadastrado com sucesso!");
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
-                dispatcher.forward(req, resp);
-                }else{
-                    req.setAttribute("mensagem","Login ou senha inválidos");
-                    // resp.getWriter().write("Cadastrado com sucesso!");
+                req.setAttribute("login",req.getParameter("login"));
+
+                if(responseCode == 200) {
+
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/dashboard.jsp");
+                    dispatcher.forward(req, resp);
+                }else if(responseCode==403) {
+                    req.setAttribute("mensagem","Usuário não autorizado!");
+                    //resp.getWriter().write("Cadastrado com sucesso!");
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/loginApiHidrobike.jsp");
+                    dispatcher.forward(req, resp);
+                }else if(responseCode==400){
+                    req.setAttribute("mensagem","Insira dados válidos!");
+                    //resp.getWriter().write("Cadastrado com sucesso!");
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/loginApiHidrobike.jsp");
+                    dispatcher.forward(req, resp);
+                }else if(responseCode==500){
+                    req.setAttribute("mensagem","Problemas no servidor! Tente mais tarde!");
+                    //resp.getWriter().write("Cadastrado com sucesso!");
                     RequestDispatcher dispatcher = req.getRequestDispatcher("/loginApiHidrobike.jsp");
                     dispatcher.forward(req, resp);
                 }
+
+
+
+
 
             } catch (Exception e) {
                 e.printStackTrace();

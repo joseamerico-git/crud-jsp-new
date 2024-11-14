@@ -55,7 +55,7 @@ public class ControladoraService extends HttpServlet {
             //System.out.println("Bateu na rota authentication");
             new Authentication().doPost(req, resp);
         } else if (acao.equals("auth/register")) {
-            new RegisterApiHidrobike().efetuarLogin(req,resp);
+            new RegisterApiHidrobike().register(req,resp);
         } else if (acao.equals("auth/login")) {
 
             new LoginApiHidrobike().doPost(req, resp);

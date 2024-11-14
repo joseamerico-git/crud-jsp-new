@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class RegisterApiHidrobike {
 
-    public void efetuarLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             // URL da API
             URL url = new URL("http://localhost:8081/auth/register");
@@ -25,33 +25,43 @@ public class RegisterApiHidrobike {
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/json");
             con.setDoOutput(true);
-            Usuario usuario = new Usuario();
-           // usuario.setLogin(req.getParameter("login"));
-            //usuario.setPassword(req.getParameter("password"));
-            //usuario.setRole(req.getParameter("role"));
+            String role = req.getParameter("role");
 
-            usuario.setLogin("doichejunior@gmail.com");
-            usuario.setPassword("1");
-            usuario.setRole("1");
+            Usuario usuario = new Usuario();
+            usuario.setLogin(req.getParameter("login"));
+            usuario.setPassword(req.getParameter("password"));
+            usuario.setRole(role);
+
+
+
+
+           // usuario.setLogin("doichejunior@gmail.com");
+           // usuario.setPassword("1");
+            //usuario.setRole("1");
 
             Gson gson = new Gson();
             String json = gson.toJson(usuario);
             System.out.println("Cheguei aqui "+ json);
 
-            // Corpo da solicitação
 
-           /*
-            String jsonInputString = "{\"login\": \"doichejunior@gmail.com\", \"password\": \"1\", \"role\": 1}";
+
+
+            String jsonInputString = "{\n" +
+                    "  \"login\":\"zetxxx@teste1\",\n" +
+                    "  \"password\":\"1\",\n" +
+                    "  \"role\":\"ADMIN\"\n" +
+                    "  \n" +
+                    "}";
 
             // Enviando a solicitação
             try (OutputStream os = con.getOutputStream()) {
-                byte[] input = jsonInputString.getBytes("UTF-8");
+                byte[] input = json.getBytes("UTF-8");
                 os.write(input, 0, input.length);
             }
 
             // Verificando a resposta
             int responseCode = con.getResponseCode();
-            String token ="";
+
             System.out.println("Response Code: " + responseCode);
             InputStream inputStream;
             if (200 <= responseCode && responseCode <= 299) {
@@ -66,11 +76,11 @@ public class RegisterApiHidrobike {
                 response.append(currentLine);
             }
             System.out.println(response.toString());
-            Gson gson = new Gson();
-            Token tokenObj = gson.fromJson(response.toString(), Token.class);
-            System.out.println(tokenObj.getToken());
+
+           // Token tokenObj = gson.fromJson(response.toString(), Token.class);
+           // System.out.println(tokenObj.getToken());
             in.close();
-*/
+
         } catch (Exception e) {
             e.printStackTrace();
         }

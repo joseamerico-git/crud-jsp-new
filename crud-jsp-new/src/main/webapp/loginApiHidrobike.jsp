@@ -42,7 +42,7 @@
             <div class="div-login">
 
 
-                <form id="form-login" method="POST" action="controladora?action=auth/login">
+                <form id="form-login" method="GET" action="controladora">
 
                     <div class="div_img"><img src="./imagens/user.png"></div>
                     <h1>Login de Usuário</h1>
@@ -60,7 +60,7 @@
 
 
                     <button id="btnLoginApi" name="btnLoginApi" type="submit" class="btn btn-primary"
-                            onclick="return valida()">Login normal</button>
+                           >Login normal</button>
 
 
 
@@ -98,7 +98,7 @@
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>
 
-        <script src="./scripts/login.js">
+
 
         </script>
 
