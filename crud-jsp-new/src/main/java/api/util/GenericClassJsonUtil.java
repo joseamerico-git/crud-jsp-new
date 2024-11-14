@@ -1,9 +1,12 @@
 package api.util;
 
+import action.auth.Token;
 import com.google.gson.Gson;
 import model.Usuario;
 import model.veiculo.CodigoCorDenatran;
 import model.veiculo.Veiculo;
+
+import java.lang.reflect.Type;
 
 public class GenericClassJsonUtil {
     public static <T> void printArray(T[] array) {
@@ -12,7 +15,7 @@ public class GenericClassJsonUtil {
         }
     }
 
-    public static <T> String convertJson(T Object) {
+    public static <T> String convertObjetoEmJson(T Object) {
 
         Gson gson = new Gson();
         String json = gson.toJson(Object);
@@ -22,13 +25,13 @@ public class GenericClassJsonUtil {
 
     }
 
-    public static <T> String convertClassEmJson(T Objetct) {
+    public static <T>Object convertJsonEmObjeto(String json,Object minhaClasse) {
 
         Gson gson = new Gson();
-        String json = gson.toJson(Objetct);
-        java.lang.String json1 = json;
-        System.out.print(json1);
-        return json1;
+        Object objetct = gson.fromJson(json, (Type) minhaClasse.getClass());
+
+        return objetct;
+
 
     }
 
@@ -41,7 +44,7 @@ public class GenericClassJsonUtil {
         printArray(stringArray);  // Funciona com String
         Usuario usuario = new Usuario("teste","123","1");
 
-       System.out.println("convertendo " + convertJson(usuario));
+       System.out.println("convertendo " + convertObjetoEmJson(usuario));
 
         Veiculo veiculo = new Veiculo();
         veiculo.setAnoFabricacao(1997);
@@ -49,10 +52,19 @@ public class GenericClassJsonUtil {
         veiculo.setPesoBruto(2000.00);
         veiculo.setPesoLiquido(1000.00);
         veiculo.setCapacidadeTracao(111);
-       
-
-        System.out.println("convertendo " + convertJson(veiculo));
 
 
+        System.out.println("convertendo " + convertObjetoEmJson(veiculo));
+
+        String jsonInputString = "{\n" +
+                "  \"chassi\":\"zetxxx@teste1\",\n" +
+                "  \"password\":\"1\",\n" +
+                "  \"role\":\"ADMIN\"\n" +
+                "  \n" +
+                "}";
+
+        Veiculo veiculo1 =  new Veiculo();
+        veiculo1 = (Veiculo) convertJsonEmObjeto(jsonInputString,veiculo1);
+        System.out.println("convertendo json em objeto " +veiculo1.getChassi());
     }
 }
