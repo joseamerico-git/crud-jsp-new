@@ -86,12 +86,18 @@ public class RegisterClienteApi {
                 response.append(currentLine);
             }
             System.out.println("token do response "+ response.toString());
+           // req.setAttribute("id");
+           System.out.print(response.toString());
 
-
-
+           gson = new Gson();
+            Cliente usuario = gson.fromJson(json, Cliente.class);
+            req.setAttribute("codigo",cliente.getId());
+            req.setAttribute("nome",cliente.getNome());
+            req.setAttribute("token",cliente.getNome());
            // Token tokenObj = gson.fromJson(response.toString(), Token.class);
            // System.out.println(tokenObj.getToken());
-
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/editarCliente.jsp");
+            dispatcher.forward(req, resp);
             // resp.getWriter().write("Cadastrado com sucesso!");
 
             in.close();

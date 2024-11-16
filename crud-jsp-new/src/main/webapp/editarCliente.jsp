@@ -36,25 +36,25 @@ ${login}
 
             <div class="op">
 
-                <h1>Cadastro de Clientes em api </h1>
+                <h1>Editando Clientes em api </h1>
 
             <c:if test="${token != null}">
                  <script>
                      let login = document.getElementById("login");
                      let token = document.getElementById("token");
 
-                     token.value = <%out.print(request.getAttribute("token"));%>
+                     token.value = "${token}";
                      console.log("token "+ token.value);
                    </script>
             </c:if>
 
 
                 <form action="controladora" method="POST" name="meu-form">
-                   <input class="form-control" type="text" readonly name="id" id="id">
+                   <input class="form-control" type="text" value="<%out.print(request.getAttribute("codigo"));%>" readonly name="id" id="id">
                     <div class="form-group">
                         <label for="nome">Nome</label></br>
-                        <input name="nome" type="text" class="form-control" id="nome"
-                            placeholder="Seu Nome">
+                        <input name="nome" type="text" class="form-control" id="nome" value="<%out.print(request.getAttribute("nome"));%>"
+                            placeholder="Seu Nome"></input>
                         </br>
 
                      	<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
