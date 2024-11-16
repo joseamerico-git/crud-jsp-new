@@ -1,11 +1,6 @@
-package servlet;
+package action.services;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,10 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.*;
 import action.auth.Authentication;
-import action.services.HidroBikeApi;
-import action.services.Impressao;
-import action.services.RegisterApiHidrobike;
-import model.Etiqueta;
+import servlet.PonteCliente;
 
 @WebServlet("/controladora")
 public class ControladoraService extends HttpServlet {
@@ -61,6 +53,14 @@ public class ControladoraService extends HttpServlet {
             new LoginApiHidrobike().doPost(req, resp);
         } else if (acao.equals("imprimir")) {
             new Impressao().doPost(req,resp);
+        }
+
+        else if (acao.equals("pontecliente")) {
+            new PonteCliente().executa(req,resp);
+        }
+        else if(acao.equals("RegisterClienteApi")){
+            System.out.print("rota do register cliente...");
+            new RegisterClienteApi().register(req,resp);
         }
     }
 }

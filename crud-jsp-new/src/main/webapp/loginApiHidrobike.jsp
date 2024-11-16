@@ -76,7 +76,7 @@
 
 
 	<c:if test="${token != null}">
-    		<span id="token"><%out.print(request.getAttribute("token"));%>!</span>
+    		<span id="token"><%out.print(request.getAttribute("token"));%></span>
                     <script>
                         let login = document.getElementById("login");
                         login.focus();
