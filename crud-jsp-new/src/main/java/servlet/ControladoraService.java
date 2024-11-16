@@ -1,4 +1,4 @@
-package action.services;
+package servlet;
 
 import java.io.IOException;
 
@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.*;
 import action.auth.Authentication;
-import servlet.PonteCliente;
+import action.AlterClienteApi;
+import action.services.Impressao;
+import action.services.RegisterApiHidrobike;
 
 @WebServlet("/controladora")
 public class ControladoraService extends HttpServlet {
@@ -60,7 +62,10 @@ public class ControladoraService extends HttpServlet {
         }
         else if(acao.equals("RegisterClienteApi")){
             System.out.print("rota do register cliente...");
-            new RegisterClienteApi().register(req,resp);
+            new AlterClienteApi().register(req,resp);
+        }
+        else if(acao.equals("AlterarClienteApi")){
+            System.out.print("alterando dados...");
         }
     }
 }

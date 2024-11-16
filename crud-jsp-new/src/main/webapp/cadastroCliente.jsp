@@ -50,7 +50,7 @@ ${login}
 
 
                 <form action="controladora" method="POST" name="meu-form">
-                   <input class="form-control" type="text" readonly name="id" id="id">
+                   <input class="form-control" type="text" readonly name="codigo" id="codigo">
                     <div class="form-group">
                         <label for="nome">Nome</label></br>
                         <input name="nome" type="text" class="form-control" id="nome"
@@ -60,6 +60,9 @@ ${login}
                      	<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
 
                         <input type="hidden" name="acao" value="RegisterClienteApi">
+                         <input type="hidden" name="login" value="<%out.print(request.getAttribute("login"));%>">
+                        <input type="hidden" name="msg" value="<%out.print(request.getAttribute("msg"));%>">
+
 
                     </div>
 

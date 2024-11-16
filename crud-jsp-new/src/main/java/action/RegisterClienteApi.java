@@ -1,4 +1,4 @@
-package action.services;
+package action;
 
 import com.google.gson.Gson;
 import model.Cliente;
@@ -43,7 +43,10 @@ public class RegisterClienteApi {
             con.setDoOutput(true);
 
 
-            Cliente cliente = new Cliente(req.getParameter("nome"));
+            Cliente cliente = new Cliente();
+            cliente.setNome(req.getParameter("nome"));
+
+
 
 
 
@@ -90,10 +93,13 @@ public class RegisterClienteApi {
            System.out.print(response.toString());
 
            gson = new Gson();
-            Cliente usuario = gson.fromJson(json, Cliente.class);
-            req.setAttribute("codigo",cliente.getId());
+             cliente = gson.fromJson(response.toString(), Cliente.class);
+             System.out.print("codigo do cliente cadastrado "+cliente.getCodigo());
+            req.setAttribute("codigo",cliente.getCodigo());
             req.setAttribute("nome",cliente.getNome());
-            req.setAttribute("token",cliente.getNome());
+            req.setAttribute("login",req.getParameter("login"));
+            req.setAttribute("msg","cadastrado com sucesso!");
+            req.setAttribute("token",req.getParameter("token"));
            // Token tokenObj = gson.fromJson(response.toString(), Token.class);
            // System.out.println(tokenObj.getToken());
             RequestDispatcher dispatcher = req.getRequestDispatcher("/editarCliente.jsp");

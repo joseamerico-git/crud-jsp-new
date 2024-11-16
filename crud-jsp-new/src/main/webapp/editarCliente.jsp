@@ -50,8 +50,9 @@ ${login}
 
 
                 <form action="controladora" method="POST" name="meu-form">
-                   <input class="form-control" type="text" value="<%out.print(request.getAttribute("codigo"));%>" readonly name="id" id="id">
-                    <div class="form-group">
+
+                  <input type="text" id="codigo" readonly name="codigo" value="<%out.print(request.getAttribute("codigo"));%>"></input>
+                  <div class="form-group">
                         <label for="nome">Nome</label></br>
                         <input name="nome" type="text" class="form-control" id="nome" value="<%out.print(request.getAttribute("nome"));%>"
                             placeholder="Seu Nome"></input>
@@ -59,7 +60,7 @@ ${login}
 
                      	<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
 
-                        <input type="hidden" name="acao" value="RegisterClienteApi">
+                        <input type="hidden" name="acao" value="AlterarClienteApi">
 
                     </div>
 
@@ -72,7 +73,10 @@ ${login}
                             >Enviar</button>
                         <img name="img-confirm" id="img-confirm">
                         <div id="spinner"></div>
-                        ${msg}
+                         <input type="hidden" id="msg" name="msg" value="<%out.print(request.getAttribute("msg"));%>">
+                        <c:if test="${msg != null}">
+                                        <span value="${msg}"></span>
+                                    </c:if>
                     </div>
 
 

@@ -66,7 +66,10 @@
                     </div>
                   
                       <input type="hidden" class="form-control" name="acao" value="SalvaUsuario">
-                      
+                         <input type="hidden" name="login" value = "<%out.print(request.getAttribute("login"));%>">
+                            <input type="hidden" name="msg" value = "<%out.print(request.getAttribute("msg"));%>">
+
+
                       <div class="form-group">
         
                                                  <select class = "form-control" name="role" onChange="seleciona()">
