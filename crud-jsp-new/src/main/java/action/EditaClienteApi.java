@@ -23,9 +23,9 @@ public class EditaClienteApi extends HttpServlet {
      System.out.print("Cheguie na rota edita clientes");
 		try {
 			// URL da API
-			URL url = new URL("http://localhost:8081/clientes/"+req.getParameter("codigo"));
+			URL url = new URL("http://localhost:8081/clientes/"+Long.valueOf(req.getParameter("codigo")));
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
+            System.out.print(url);
 			// Configurações da conexão
 			con.setRequestMethod("PUT");
 			String bearer = "Bearer ";
@@ -49,6 +49,7 @@ public class EditaClienteApi extends HttpServlet {
 
 
 			Cliente cliente = new Cliente();
+			cliente.setCodigo(Long.valueOf(req.getParameter("codigo")));
 			cliente.setNome(req.getParameter("nome"));
 
 

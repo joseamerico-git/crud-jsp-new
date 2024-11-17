@@ -60,7 +60,7 @@ ${login}
 
                      	<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
 
-                        <input type="hidden" name="acao" value="AlterarClienteApi">
+                        <input type="hidden" name="acao" value="EditaClienteApi">
 
                     </div>
 

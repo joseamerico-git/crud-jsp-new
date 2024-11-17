@@ -33,7 +33,9 @@ public class PonteCliente{
         System.out.print(("rota ponte atualiza"));
         req.setAttribute("token",req.getParameter("token"));
         req.setAttribute("login",req.getParameter("login"));
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/editaCliente.jsp");
+        req.setAttribute("nome",req.getParameter("nome"));
+        req.setAttribute("codigo",req.getParameter("codigo"));
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/editarCliente.jsp");
         dispatcher.forward(req, resp);
     }
 
