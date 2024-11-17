@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.*;
 import action.auth.Authentication;
-import action.AlterClienteApi;
+import action.CadastraClienteApi;
 import action.services.Impressao;
 import action.services.RegisterApiHidrobike;
 
@@ -60,12 +60,24 @@ public class ControladoraService extends HttpServlet {
         else if (acao.equals("pontecliente")) {
             new PonteCliente().executa(req,resp);
         }
+        else if (acao.equals("pontecliente/listar")) {
+            new PonteCliente().lista(req,resp);
+        }
+        else if (acao.equals("pontecliente/atualiza")) {
+            new PonteCliente().atualiza(req,resp);
+        }
+
         else if(acao.equals("RegisterClienteApi")){
             System.out.print("rota do register cliente...");
-            new AlterClienteApi().register(req,resp);
+            new CadastraClienteApi().register(req,resp);
         }
         else if(acao.equals("AlterarClienteApi")){
-            System.out.print("alterando dados...");
+            System.out.print("alterando dados clientes api...");
+            new PonteCliente().atualiza(req,resp);
+        }
+        else if(acao.equals("ListaClientesApi")){
+            System.out.print("Listando clientes api dados...");
+            new ListaClientesApi().executa(req,resp);
         }
     }
 }

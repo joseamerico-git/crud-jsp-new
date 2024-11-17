@@ -11,7 +11,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class AlterClienteApi {
+public class CadastraClienteApi {
 
     public void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

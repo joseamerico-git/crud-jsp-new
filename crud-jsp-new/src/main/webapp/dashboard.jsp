@@ -46,12 +46,14 @@
 
            <div id="op" class="op">
                <h1>Dashboard</h1>
-            <form action="controladora" method="GET">
+            <form id="meu-form" action="controladora" method="GET">
                <c:if test="${token != null}">
                    		<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
                    	    <input type="hidden" id="acao" name="acao" value="pontecliente">
                    	    <input type="hidden" name="login" value = "<%out.print(request.getAttribute("login"));%>">
                    	    <button class="fcc-btn" type="submit">Cadastrar Cliente na api</button>
+                   	     <button class="fcc-btn" onclick="return listar()" type="submit">Listar Clientes na api</button>
+
 </form>
 
                                    <script>
@@ -66,6 +68,26 @@
                                        console.log("token "+ token.value);
 
 
+                                        function listar(){
+                                            let acao = document.getElementById("acao");
+                                            acao.value="pontecliente/listar";
+                                            form = document.getElementById("meu-form");
+                                            form.submit();
+
+                                            return true;
+
+                                        }
+                                        function cadastrar(){
+                                            let acao = document.getElementById("acao");
+                                             acao.value="pontecliente";
+                                             form = document.getElementById("meu-form");
+                                              form.submit();
+                                            return true;
+
+                                                                                }
+
+
+
 
 
 
@@ -73,6 +95,7 @@
                    	</c:if>
                <a class="fcc-btn" href="adiciona-usuarios.jsp">Adicionar um novo usuário</a>
                <a class="fcc-btn" href="listar-usuarios.jsp">Listar usuários cadastrados</a>
+               <a class="fcc-btn" href="listar-clientesapi.jsp">Listar clientes cadastrados api?</a>
                <a class="fcc-btn" href="controladora?acao=RelatorioUsuario">Relatório</a>
 
                               </div>

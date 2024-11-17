@@ -49,7 +49,7 @@ ${login}
             </c:if>
 
 
-                <form action="controladora" method="POST" name="meu-form">
+                <form action="controladora" method="PUT" name="meu-form">
 
                   <input type="text" id="codigo" readonly name="codigo" value="<%out.print(request.getAttribute("codigo"));%>"></input>
                   <div class="form-group">
