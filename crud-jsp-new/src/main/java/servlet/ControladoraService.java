@@ -73,7 +73,7 @@ public class ControladoraService extends HttpServlet {
         }
         else if(acao.equals("AlterarClienteApi")){
             System.out.print("alterando dados clientes api...");
-            new PonteCliente().atualiza(req,resp);
+            new PonteCliente().atualiza(req,resp); //
         }
 
         else if(acao.equals("EditaClienteApi")){
