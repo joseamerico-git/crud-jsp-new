@@ -4,20 +4,71 @@ import api.util.Endereco;
 import api.util.Util;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import dao.UsuarioDao;
+import model.Cliente;
 import model.Role;
 import model.Usuario;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HidroBikeApi {
+
+    public void listarClientesApi(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
+        try {
+            System.out.print(("rota lista"));
+            req.setAttribute("token", req.getParameter("token"));
+            req.setAttribute("login", req.getParameter("login"));
+
+            URL url = new URL("http://localhost:8081/clientes");
+            URLConnection urlConnection = url.openConnection();
+
+            urlConnection.setDoOutput(true); // if you need to write to the URL
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            String bearer = "Bearer ";
+            String token = bearer + req.getParameter("token");
+
+
+            urlConnection.setRequestProperty("authorization", token);
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            urlConnection.connect();
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            in.close();
+            System.out.print(content.toString());
+
+            Gson gson = new Gson();
+            Type listType = new TypeToken<ArrayList<Cliente>>() {
+            }.getType();
+            ArrayList<Cliente> clientes = gson.fromJson(content.toString(), listType);
+            req.setAttribute("clientes", clientes);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("controladora?acao=RelatorioClientes");
+            dispatcher.forward(req, resp);
+
+
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+
+
+}
 
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws Exception {

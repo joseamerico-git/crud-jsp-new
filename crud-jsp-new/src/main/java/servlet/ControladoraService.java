@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import action.*;
 import action.auth.Authentication;
 import action.CadastraClienteApi;
+import action.services.HidroBikeApi;
 import action.services.Impressao;
 import action.services.RegisterApiHidrobike;
+import action.services.RelatorioClientes;
+import com.itextpdf.text.DocumentException;
 
 @WebServlet("/controladora")
 public class ControladoraService extends HttpServlet {
@@ -67,6 +70,19 @@ public class ControladoraService extends HttpServlet {
             new PonteCliente().atualiza(req,resp);
         }
 
+        else if (acao.equals("pontecliente/relatorio")) {
+            new HidroBikeApi().listarClientesApi(req,resp);
+        }
+
+        else if (acao.equals("RelatorioClientes")) {
+
+            try {
+                new RelatorioClientes().executa(req,resp);
+            } catch (DocumentException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
         else if(acao.equals("RegisterClienteApi")){
             System.out.print("rota do register cliente...");
             new CadastraClienteApi().register(req,resp);
@@ -74,6 +90,11 @@ public class ControladoraService extends HttpServlet {
         else if(acao.equals("AlterarClienteApi")){
             System.out.print("alterando dados clientes api...");
             new PonteCliente().atualiza(req,resp); //
+        }
+
+        else if(acao.equals("HidroBikeApi/listar")){
+            System.out.print("alterando dados clientes api...");
+            new HidroBikeApi().listarClientesApi(req,resp);
         }
 
         else if(acao.equals("EditaClienteApi")){

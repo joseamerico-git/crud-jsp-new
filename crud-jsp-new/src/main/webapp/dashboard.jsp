@@ -53,6 +53,8 @@
                    	    <input type="hidden" name="login" value = "<%out.print(request.getAttribute("login"));%>">
                    	    <button class="fcc-btn" type="submit">Cadastrar Cliente na api</button>
                    	     <button class="fcc-btn" onclick="return listar()" type="submit">Listar Clientes na api</button>
+                   	      <button class="fcc-btn" onclick="return relatorio()" type="submit">Relatorio de clientes na api</button>
+
 
 </form>
 
@@ -84,7 +86,14 @@
                                               form.submit();
                                             return true;
 
-                                                                                }
+                                            }
+                                            function relatorio(){
+                                                  let acao = document.getElementById("acao");
+                                                 acao.value="pontecliente/relatorio";
+                                                  form = document.getElementById("meu-form");
+                                                  form.submit();
+                                                  return true;
+                                            }
 
 
 
