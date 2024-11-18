@@ -1,28 +1,11 @@
-package api.util;
+package model.veiculo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.BaseCalculo;
-import model.Cofins;
-import model.Destinatario;
-import model.Emitente;
-import model.Endereco;
-import model.Icms;
-import model.Iten;
-import model.Nfe;
-import model.Pagamento;
-import model.Pis;
-import model.ResponsavelTecnico;
-import model.Telefone;
-import model.Tributos;
-import model.ValorUnitario;
+import api.util.HttpUtil;
+import api.util.UtilNfeJson;
 import model.certificado.Certificado;
-import model.veiculo.CodigoCorDenatran;
-import model.veiculo.Tipo;
-import model.veiculo.TipoCombustivel;
-import model.veiculo.TipoOperacao;
-import model.veiculo.Veiculo;
 
 public class TesteEnvio {
 
@@ -79,7 +62,7 @@ public class TesteEnvio {
 		pagamentos.add(pagamento);
 
 		// buscar cep
-		model.Endereco endereco = new Endereco();
+		Endereco endereco = new Endereco();
 		endereco.setTipoLogradouro("Avenida");
 		endereco.setLogradouro("AVENIDA DUQUE DE CAXIAS");
 		endereco.setNumero("882");
@@ -104,7 +87,7 @@ public class TesteEnvio {
 
 		// Bean da nota
 		Nfe nfE = new Nfe();
-		nfE.setIdIntegracao("XXXYY999998817");
+		nfE.setIdIntegracao("XXXYY9999988178");
 		nfE.setPresencial("1");
 		nfE.setConsumidorFinal(true);
 		nfE.setNatureza("OPERAÇÃO INTERNA");

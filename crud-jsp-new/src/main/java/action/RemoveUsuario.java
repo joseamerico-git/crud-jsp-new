@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UsuarioDao;
-import model.Usuario;
+import model.api.Usuario;
 
 public class RemoveUsuario {
 

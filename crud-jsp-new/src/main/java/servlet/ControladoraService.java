@@ -60,11 +60,18 @@ public class ControladoraService extends HttpServlet {
             new Impressao().doPost(req,resp);
         }
 
-        else if (acao.equals("pontecliente")) {
+        else if (acao.equals("pontecliente/cadastrar")) {
             new PonteCliente().executa(req,resp);
+        }
+        else if (acao.equals("pontecliente/registrar")) {
+            new PonteCliente().register(req,resp);
         }
         else if (acao.equals("pontecliente/listar")) {
             new PonteCliente().lista(req,resp);
+        }
+
+        else if (acao.equals("pontecliente/listarByName")) {
+            new PonteCliente().listaByName(req,resp);
         }
         else if (acao.equals("pontecliente/atualiza")) {
             new PonteCliente().atualiza(req,resp);
@@ -99,6 +106,10 @@ public class ControladoraService extends HttpServlet {
 
         else if(acao.equals("EditaClienteApi")){
             new EditaClienteApi().register(req,resp);
+        }
+        else if(acao.equals("RemoveCliente")){
+            System.out.print("Rota remover "+req.getParameter("codigo"));
+            new RemoveClienteApi().remove(req,resp);
         }
         else if(acao.equals("ListaClientesApi")){
             System.out.print("Listando clientes api dados...");

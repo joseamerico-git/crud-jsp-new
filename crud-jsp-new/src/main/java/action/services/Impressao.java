@@ -1,15 +1,10 @@
 package action.services;
 
-import impressao.Impressora;
-import model.Etiqueta;
+import model.veiculo.Etiqueta;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.print.PageFormat;
-import java.awt.print.PrinterException;
-import java.awt.print.PrinterJob;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

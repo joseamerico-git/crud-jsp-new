@@ -1,20 +1,26 @@
-package model;
+package model.veiculo;
 
-public class Pis {
+public class Icms {
+	public String origem;
 	public String cst;
 	public BaseCalculo baseCalculo;
 	public int aliquota;
-	public int valor;
+	public double valor;
 
-	public Pis(String cst, BaseCalculo baseCalculo, int aliquota, int valor) {
+	public Icms(String origem, String cst, BaseCalculo baseCalculo, int aliquota, double valor) {
+		this.origem = origem;
 		this.cst = cst;
 		this.baseCalculo = baseCalculo;
 		this.aliquota = aliquota;
 		this.valor = valor;
 	}
 
-	public Pis(String cst) {
-		this.cst = cst;
+	public String getOrigem() {
+		return origem;
+	}
+
+	public void setOrigem(String origem) {
+		this.origem = origem;
 	}
 
 	public String getCst() {
@@ -41,11 +47,11 @@ public class Pis {
 		this.aliquota = aliquota;
 	}
 
-	public int getValor() {
+	public double getValor() {
 		return valor;
 	}
 
-	public void setValor(int valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 }

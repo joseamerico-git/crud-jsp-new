@@ -1,4 +1,4 @@
-package model;
+package model.veiculo;
 
 public class Emitente {
 	public String cpfCnpj;

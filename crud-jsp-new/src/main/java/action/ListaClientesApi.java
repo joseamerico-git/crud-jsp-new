@@ -3,7 +3,7 @@ package action;
 
 import dao.ClienteDao;
 
-import model.Cliente;
+import model.api.Cliente;
 
 
 import javax.servlet.RequestDispatcher;

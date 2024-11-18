@@ -2,7 +2,7 @@ package action;
 
 import dao.ClienteDao;
 import dao.UsuarioDao;
-import model.Usuario;
+import model.api.Usuario;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

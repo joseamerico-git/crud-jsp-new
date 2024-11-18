@@ -1,6 +1,4 @@
-package model;
-
-import model.veiculo.Veiculo;
+package model.veiculo;
 
 public class Iten {
 	private String codigo;

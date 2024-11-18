@@ -1,4 +1,4 @@
-package model;
+package model.veiculo;
 
 import java.io.Serializable;
 import java.util.List;

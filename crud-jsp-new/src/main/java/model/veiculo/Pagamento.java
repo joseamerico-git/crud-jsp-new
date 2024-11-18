@@ -1,4 +1,4 @@
-package model;
+package model.veiculo;
 
 public class Pagamento {
 	public boolean aVista;

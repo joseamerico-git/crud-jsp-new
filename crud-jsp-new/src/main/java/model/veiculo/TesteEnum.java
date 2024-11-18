@@ -1,6 +1,4 @@
-package model;
-
-import model.veiculo.TipoOperacao;
+package model.veiculo;
 
 public class TesteEnum {
 

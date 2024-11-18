@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
-import model.Nfe;
+import model.veiculo.Nfe;
 
 public class UtilNfeJson {
 

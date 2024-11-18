@@ -1,14 +1,4 @@
-package model;
-
-import model.veiculo.CodigoCorDenatran;
-import model.veiculo.Condicao;
-import model.veiculo.CondicaoVin;
-import model.veiculo.Especie;
-import model.veiculo.Restricao;
-import model.veiculo.Tipo;
-import model.veiculo.TipoCombustivel;
-import model.veiculo.TipoOperacao;
-import model.veiculo.Veiculo;
+package model.veiculo;
 
 public class TesteVeiculo {
 

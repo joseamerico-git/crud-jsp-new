@@ -48,7 +48,6 @@ ${login}
                    </script>
             </c:if>
 
-
                 <form action="controladora" method="PUT" name="meu-form">
 
                   <input type="text" id="codigo" readonly name="codigo" value="<%out.print(request.getAttribute("codigo"));%>"></input>
@@ -75,7 +74,7 @@ ${login}
                         <div id="spinner"></div>
                          <input type="hidden" id="msg" name="msg" value="<%out.print(request.getAttribute("msg"));%>">
                         <c:if test="${msg != null}">
-                                        <span value="${msg}"></span>
+                                        <span><%out.print(request.getAttribute("msg"));%></span>
                                     </c:if>
                     </div>
 

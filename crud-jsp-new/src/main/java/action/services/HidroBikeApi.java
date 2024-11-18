@@ -1,19 +1,12 @@
 package action.services;
 
-import api.util.Endereco;
-import api.util.Util;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import dao.UsuarioDao;
-import model.Cliente;
-import model.Role;
-import model.Usuario;
+import model.api.Cliente;
+import model.api.Usuario;
 
-import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -22,7 +15,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.List;
 
 public class HidroBikeApi {
 

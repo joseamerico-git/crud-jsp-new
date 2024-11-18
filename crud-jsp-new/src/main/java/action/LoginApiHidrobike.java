@@ -2,20 +2,16 @@ package action;
 
 import action.auth.Token;
 import com.google.gson.Gson;
-import dao.UsuarioDao;
-import model.Usuario;
+import model.api.Usuario;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.HttpURLConnection;
 
 import java.net.URL;
-import java.net.URLEncoder;
-
 
 
 public class LoginApiHidrobike {

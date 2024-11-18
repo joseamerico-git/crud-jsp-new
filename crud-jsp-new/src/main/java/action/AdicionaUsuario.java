@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UsuarioDao;
-import model.Role;
-import model.Usuario;
+import model.api.Role;
+import model.api.Usuario;
 
 public class AdicionaUsuario {
 

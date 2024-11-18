@@ -1,7 +1,4 @@
-package model;
-
-import java.util.ArrayList;
-import java.util.List;
+package model.veiculo;
 
 public enum ExemploEnum {
 	SALVAR(1), IMPRMIR(2), ABRIR(3), VISUALIZAR(4), FECHAR(5);

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UsuarioDao;
-import model.Usuario;
+import model.api.Usuario;
 
 public class ListaUsuarios {
 	public void executa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

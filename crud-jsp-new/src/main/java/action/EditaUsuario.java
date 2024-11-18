@@ -1,9 +1,7 @@
 package action;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UsuarioDao;
-import model.Role;
-import model.Usuario;
+import model.api.Role;
+import model.api.Usuario;
 
 public class EditaUsuario extends HttpServlet {
 

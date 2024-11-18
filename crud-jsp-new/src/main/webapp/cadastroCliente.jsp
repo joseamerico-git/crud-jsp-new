@@ -59,7 +59,7 @@ ${login}
 
                      	<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
 
-                        <input type="hidden" name="acao" value="RegisterClienteApi">
+                        <input type="hidden" name="acao" value="pontecliente/registrar">
                          <input type="hidden" name="login" value="<%out.print(request.getAttribute("login"));%>">
                         <input type="hidden" name="msg" value="<%out.print(request.getAttribute("msg"));%>">
 

@@ -1,6 +1,6 @@
 package dao;
 
-import model.Cliente;
+import model.api.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,10 +1,21 @@
-package model;
+package model.veiculo;
 
-public class Cofins {
-	private String cst;
-	private BaseCalculo baseCalculo;
-	private int aliquota;
-	private int valor;
+public class Pis {
+	public String cst;
+	public BaseCalculo baseCalculo;
+	public int aliquota;
+	public int valor;
+
+	public Pis(String cst, BaseCalculo baseCalculo, int aliquota, int valor) {
+		this.cst = cst;
+		this.baseCalculo = baseCalculo;
+		this.aliquota = aliquota;
+		this.valor = valor;
+	}
+
+	public Pis(String cst) {
+		this.cst = cst;
+	}
 
 	public String getCst() {
 		return cst;
@@ -36,17 +47,5 @@ public class Cofins {
 
 	public void setValor(int valor) {
 		this.valor = valor;
-	}
-
-	public Cofins(String cst, BaseCalculo baseCalculo, int aliquota, int valor) {
-		this.cst = cst;
-		this.baseCalculo = baseCalculo;
-		this.aliquota = aliquota;
-		this.valor = valor;
-	}
-
-	public Cofins(String cst, BaseCalculo baseCalculo) {
-		this.cst = cst;
-		this.baseCalculo = baseCalculo;
 	}
 }

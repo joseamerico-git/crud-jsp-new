@@ -1,8 +1,7 @@
 package api.util;
 
-import action.auth.Token;
 import com.google.gson.Gson;
-import model.Usuario;
+import model.api.Usuario;
 import model.veiculo.CodigoCorDenatran;
 import model.veiculo.Veiculo;
 

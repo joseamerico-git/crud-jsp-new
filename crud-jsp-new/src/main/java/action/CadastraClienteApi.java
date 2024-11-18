@@ -1,7 +1,7 @@
 package action;
 
 import com.google.gson.Gson;
-import model.Cliente;
+import model.api.Cliente;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

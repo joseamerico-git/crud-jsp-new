@@ -1,4 +1,4 @@
-package model;
+package model.api;
 
 public enum Role {
 

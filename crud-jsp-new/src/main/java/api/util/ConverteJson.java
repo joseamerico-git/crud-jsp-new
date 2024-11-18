@@ -1,6 +1,6 @@
 package api.util;
 
-import model.Usuario;
+import model.api.Usuario;
 
 import java.lang.reflect.Method;
 

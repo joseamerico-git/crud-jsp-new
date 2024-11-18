@@ -51,7 +51,7 @@
                    		<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
                    	    <input type="hidden" id="acao" name="acao" value="pontecliente">
                    	    <input type="hidden" name="login" value = "<%out.print(request.getAttribute("login"));%>">
-                   	    <button class="fcc-btn" type="submit">Cadastrar Cliente na api</button>
+                   	    <button class="fcc-btn" type="submit" onclick="return cadastrar()">Cadastrar Cliente na api</button>
                    	     <button class="fcc-btn" onclick="return listar()" type="submit">Listar Clientes na api</button>
                    	      <button class="fcc-btn" onclick="return relatorio()" type="submit">Relatorio de clientes na api</button>
 
@@ -81,8 +81,9 @@
                                         }
                                         function cadastrar(){
                                             let acao = document.getElementById("acao");
-                                             acao.value="pontecliente";
+                                             acao.value="pontecliente/cadastrar";
                                              form = document.getElementById("meu-form");
+                                             form.method = "POST";
                                               form.submit();
                                             return true;
 

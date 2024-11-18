@@ -1,6 +1,4 @@
-package model;
-
-import java.util.Date;
+package model.veiculo;
 
 public class Etiqueta {
 

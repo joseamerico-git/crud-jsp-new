@@ -1,4 +1,4 @@
-package model;
+package model.veiculo;
 
 public class ResponsavelTecnico {
 	public String cpfCnpj;

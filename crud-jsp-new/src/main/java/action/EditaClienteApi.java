@@ -1,9 +1,7 @@
 package action;
 
 import com.google.gson.Gson;
-import model.Cliente;
-import model.Role;
-import model.Usuario;
+import model.api.Cliente;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Arrays;
 
 public class EditaClienteApi extends HttpServlet {
 
@@ -97,7 +94,14 @@ public class EditaClienteApi extends HttpServlet {
 			req.setAttribute("codigo", cliente.getCodigo());
 			req.setAttribute("nome", cliente.getNome());
 			req.setAttribute("login", req.getParameter("login"));
-			req.setAttribute("msg", "Atualizado com sucesso!");
+			req.setAttribute("msg", null);
+			if(responseCode==200){
+				req.setAttribute("msg", "Atualizado com sucesso!");
+			}else if(responseCode>399){
+				req.setAttribute("msg", "Problemas ao atualiar!");
+			}
+
+
 			req.setAttribute("token", req.getParameter("token"));
 			// Token tokenObj = gson.fromJson(response.toString(), Token.class);
 			// System.out.println(tokenObj.getToken());

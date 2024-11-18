@@ -51,8 +51,8 @@
               </c:if>
   
                   <form action="controladora" method="GET">
-                    <input type="text" name="login">
-                    <input type="hidden" name ="acao" value="ListaClientesApi">
+                    <input type="text" name="nome">
+                    <input type="hidden" name ="acao" value="pontecliente/listarByName">
                 	<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
 
                     <input type="submit" onclick="return valida()" value="Pesquisar" >
@@ -76,7 +76,7 @@
                             <td>${c.getCodigo()}</td>
                             <td>${c.getNome()}</td>
                             <td>
-                           <a href="controladora?acao=RemoveCliente&codigo=${c.getCodigo()}">Remover</a>
+                           <a href="controladora?acao=RemoveCliente&token=${token}&codigo=${c.getCodigo()}">Remover</a>
                            <a href="controladora?acao=pontecliente/atualiza&codigo=${c.getCodigo()}&nome=${c.getNome()}&token=${token}">Editar</a>
                                                      </td>
              
