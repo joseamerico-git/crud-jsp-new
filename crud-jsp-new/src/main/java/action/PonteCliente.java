@@ -174,14 +174,27 @@ public class PonteCliente {
     }
 
     public void listaByName(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.print(("rota ponte lista"));
+        System.out.print(("\n rota ponte lista por nome"));
         req.setAttribute("token", req.getParameter("token"));
         req.setAttribute("login", req.getParameter("login"));
+        req.setAttribute("nome",req.getParameter("nome"));
+        String nome = req.getParameter("nome");
+        System.out.print(nome);
+        //String aux = nome.replace(' ','+');
+        //System.out.print(aux);
 
-        URL url = new URL("http://localhost:8081/clientes/list?nome="+req.getParameter("nome"));
+        URL url = new URL("http://localhost:8081/clientes/list?nome="+req.getAttribute("nome"));
         URLConnection urlConnection = url.openConnection();
 
         urlConnection.setDoOutput(true); // if you need to write to the URL
+        urlConnection.setRequestProperty("X-Content-Type-Options", "nosniff");
+        urlConnection.setRequestProperty("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate");
+        urlConnection.setRequestProperty("X-XSS-Protection", "1; mode=block");
+        urlConnection.setRequestProperty("Pragma", "no-cache");
+        urlConnection.setRequestProperty("Transfer-Encoding", "chunked");
+        urlConnection.setRequestProperty("Vary", "Origin");
+        urlConnection.setRequestProperty("Vary", "Access-Control-Request-Method");
+        urlConnection.setRequestProperty("Vary", "Access-Control-Request-Headers");
         urlConnection.setRequestProperty("Content-Type", "application/json");
         String bearer = "Bearer ";
         String token = bearer + req.getParameter("token");

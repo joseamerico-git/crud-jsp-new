@@ -51,7 +51,7 @@
               </c:if>
   
                   <form action="controladora" method="GET">
-                    <input type="text" name="nome">
+                    <input type="text" name="nome" id="nome">
                     <input type="hidden" name ="acao" value="pontecliente/listarByName">
                 	<input type="text" id="token" name="token" value="<%out.print(request.getAttribute("token"));%>"></input>
 
